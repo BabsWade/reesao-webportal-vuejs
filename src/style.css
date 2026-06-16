@@ -1,0 +1,128 @@
+@import "tailwindcss";
+
+@theme {
+  --color-navy: #0f3d8f;      /* bleu REESAO */
+  --color-emerald: #16a34a;   /* vert */
+  --color-gold: #f4c430;      /* jaune/or */
+  --color-soft: #f8fafc;
+
+  --font-display: "Playfair Display", serif;
+  --font-sans: "Inter", sans-serif;
+}
+
+@layer utilities {
+
+  /* Base pays item */
+  .country-item {
+    position: relative;
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #64748b; /* slate-500 */
+    padding: 0.75rem 0.5rem;
+    transition: all 0.3s ease;
+  }
+
+  /* Hover premium */
+  .country-item:hover {
+    color: var(--color-navy);
+    transform: translateY(-2px);
+  }
+
+  /* Ligne animée sous le pays */
+  .country-item::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -6px;
+    transform: translateX(-50%);
+    width: 0%;
+    height: 2px;
+    background: var(--color-emerald);
+    transition: 0.3s ease;
+  }
+
+  .country-item:hover::after {
+    width: 60%;
+  }
+
+  /* État actif */
+  .country-item.active {
+    color: var(--color-navy);
+    font-weight: 600;
+  }
+
+  .country-item.active::after {
+    width: 80%;
+    background: var(--color-emerald);
+  }
+
+  .accent-line {
+    position: relative;
+    padding-left: 1.25rem;
+  }
+
+  .accent-line::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.25rem;
+    width: 4px;
+    height: 70%;
+    border-radius: 999px;
+    background: linear-gradient(
+      to bottom,
+      var(--color-emerald),
+      var(--color-gold)
+    );
+  }
+  .academic-grid {
+    background-image:
+      linear-gradient(rgb(15 61 143 / 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgb(15 61 143 / 0.04) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+   .reesao-gradient {
+    background: linear-gradient(
+      135deg,
+      var(--color-navy),
+      var(--color-emerald)
+    );
+  }
+
+  .reesao-gradient-soft {
+    background: linear-gradient(
+      135deg,
+      rgb(15 61 143 / 0.08),
+      rgb(22 163 74 / 0.08),
+      rgb(244 196 48 / 0.08)
+    );
+  }
+   .network-dots {
+    background-image: radial-gradient(
+      rgb(22 163 74 / 0.15) 1px,
+      transparent 1px
+    );
+    background-size: 18px 18px;
+  }
+}
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Cache scrollbar Chrome, Edge, Safari */
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* Cache scrollbar Firefox */
+body {
+  scrollbar-width: none;
+}
+
+/* Cache scrollbar IE/Edge ancien */
+body {
+  -ms-overflow-style: none;
+}
