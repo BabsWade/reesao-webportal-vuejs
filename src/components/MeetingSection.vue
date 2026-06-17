@@ -106,23 +106,7 @@ const thumbnail = slide1;
             </div>
 
             <!-- Cartouche d'information strict -->
-            <div class="absolute bottom-0 left-0 bg-white p-6 lg:p-8 max-w-[90%] sm:max-w-md border-t border-r border-[#0071bd]/10">
-              <!-- Ornement coin -->
-              <div class="absolute top-0 right-0 w-2 h-2 border-t border-r border-[#0071bd] m-2"></div>
-              
-              <div class="flex items-center gap-3 mb-4">
-                <span class="px-3 py-1 bg-[#0071bd] text-white text-[9px] font-bold uppercase tracking-[0.2em] relative overflow-hidden">
-                  Conférence
-                  <span class="absolute inset-0 bg-white/10" style="background: repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(255,255,255,0.1) 2px, rgba(255,255,255,0.1) 4px);"></span>
-                </span>
-                <span class="text-[10px] font-bold text-[#0071bd]/50 tracking-[0.2em] uppercase">
-                  04:28:00
-                </span>
-              </div>
-              <h3 class="text-10 lg:text-10 font-bold text-[#0071bd] leading-snug">
-                Thème 2025 : «Insertion professionnelle et entrepreneuriat étudiant: Interfaces entre universités, incubateurs...»
-              </h3>
-            </div>
+          
           </a>
         </div>
 
@@ -187,7 +171,7 @@ const thumbnail = slide1;
                   </span>
                   <i class="ri-arrow-right-line text-[#38a935] opacity-0 -translate-x-2 transition-all duration-300 group-hover/link:opacity-100 group-hover/link:translate-x-0 text-lg"></i>
                 </a>
-                <a href="#" class="group/link flex items-center justify-between py-4 border-b border-[#0071bd]/10 text-[13px] font-bold text-[#0071bd]/80 hover:text-[#0071bd] transition-colors">
+                <a href="http://localhost:5173/rapports" class="group/link flex items-center justify-between py-4 border-b border-[#0071bd]/10 text-[13px] font-bold text-[#0071bd]/80 hover:text-[#0071bd] transition-colors">
                   <span class="flex items-center gap-2">
                     <span class="w-1 h-1 bg-[#ffe900] rotate-45 opacity-0 transition-opacity group-hover/link:opacity-100"></span>
                     Rapports d'activités

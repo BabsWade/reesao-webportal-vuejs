@@ -62,11 +62,11 @@ const priorities = [
               </svg>
               
               <!-- Conteneur d'image principal -->
-              <div class="relative z-10 aspect-[4/5] bg-[#0071bd] overflow-hidden border border-white/20">
+              <div class="relative z-10 aspect-[4/5] bg-[#0071bd]/25 overflow-hidden border border-white/20">
                 <img 
                   :src="presidentImg" 
                   alt="Portrait officiel du Président du REESAO" 
-                  class="w-full h-full object-cover object-top grayscale contrast-[1.05] transition-all duration-1000 ease-out group-hover:grayscale-0 group-hover:scale-105 mix-blend-luminosity hover:mix-blend-normal"
+                  class="w-full h-full object-cover object-top contrast-[1.05] transition-all duration-1000 ease-out group-hover:grayscale-0 group-hover:scale-105 mix-blend-luminosity hover:mix-blend-normal"
                 />
               </div>
             </div>

@@ -180,11 +180,11 @@ const goToArticle = (slug) => {
             <!-- Carte principale -->
             <div class="relative bg-white border border-[#0071bd]/10 flex flex-col h-full z-10 transition-transform duration-300 ease-out group-hover:-translate-x-1 group-hover:-translate-y-1">
               
-              <div class="aspect-[4/3] overflow-hidden bg-[#0071bd] relative border-b border-[#0071bd]/10 group/img">
+              <div class="aspect-[4/3] overflow-hidden bg-[#0071bd]/25 relative border-b border-[#0071bd]/10 group/img">
                 <img
                   :src="article.image"
                   :alt="article.title"
-                  class="w-full h-full object-cover opacity-80 transition-all duration-700 ease-out group-hover/img:scale-105 group-hover/img:opacity-100 mix-blend-luminosity hover:mix-blend-normal"
+                  class="w-full h-full object-cover opacity-100 transition-all duration-700 ease-out group-hover/img:scale-105 "
                   loading="lazy"
                 />
                 <div class="absolute inset-0 bg-[#0071bd]/20 transition-colors duration-500 group-hover/img:bg-transparent mix-blend-multiply"></div>
@@ -276,7 +276,7 @@ const goToArticle = (slug) => {
           class="relative group"
         >
           <!-- Ombre décalée (Effet 3D isométrique) -->
-          <div class="absolute inset-0 bg-[#0071bd] translate-x-2 translate-y-2 transition-transform duration-300 ease-out group-hover:translate-x-1 group-hover:translate-y-1"></div>
+          <div class="absolute inset-0 bg-[#38a935] translate-x-2 translate-y-2 transition-transform duration-300 ease-out group-hover:translate-x-1 group-hover:translate-y-1"></div>
           
           <!-- Corps bouton -->
           <div class="relative bg-[#0071bd] text-white px-8 py-4 text-[11px] font-mono font-bold uppercase tracking-[0.2em] flex items-center gap-3 border border-[#0071bd] transition-colors group-hover:bg-[#ffe900] group-hover:text-[#0071bd] group-hover:border-[#ffe900]">
