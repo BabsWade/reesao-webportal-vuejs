@@ -107,7 +107,7 @@ onBeforeUnmount(() => {
       
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 flex-1">
         
-        <div class="lg:col-span-8 flex flex-col justify-end h-full text-white">
+        <div class="lg:col-span-8 flex flex-col justify-end h-full text-white pb-6">
           <div class="flex flex-col justify-end">
             
             <transition 
@@ -170,17 +170,13 @@ onBeforeUnmount(() => {
           </div>
         </div>
 
-        <div class="hidden lg:flex lg:col-span-3 lg:col-start-10 flex-col justify-end h-full relative">
-          
-          <div class="p-8 w-full relative bg-white/5 backdrop-blur-md border border-white/10">
+        <div class="hidden lg:flex lg:col-span-3 lg:col-start-10 flex-col justify-end h-full relative pb-6">
             <div class="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-[#ffe900]"></div>
             <div class="absolute top-0 right-0 w-3 h-3 border-t-2 border-r-2 border-[#ffe900]"></div>
             
-            <div class="pb-6 flex flex-col gap-2">
-               <span class="text-white/60 text-sm font-mono tracking-widest">{{ formattedCurrent }} / {{ formattedTotal }}</span>
-            </div>
+          
 
-            <div class="border-t border-white/10 pt-6 flex items-center justify-between">
+            <div class=" pt-6 flex items-center justify-between">
                
                <div class="w-12 h-[4px]" style="background: repeating-linear-gradient(45deg, rgba(255,255,255,0.3), rgba(255,255,255,0.3) 2px, transparent 2px, transparent 4px);"></div>
 
@@ -193,17 +189,17 @@ onBeforeUnmount(() => {
                  </button>
                </div>
             </div>
-
-            <div class="absolute bottom-0 left-0 w-full h-[3px] bg-white/10">
-              <div class="h-full bg-[#38a935] transition-all duration-75 ease-linear relative" :style="{ width: `${progress}%` }">
-                <div class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 w-2 h-2 bg-[#ffe900] rotate-45"></div>
-              </div>
-            </div>
-
-          </div>
+        
         </div>
 
       </div>
     </div>
+
+    <div class="absolute bottom-0 left-0 w-full h-[4px] bg-white/10 z-40">
+      <div class="h-full bg-[#38a935] transition-all duration-75 ease-linear relative" :style="{ width: `${progress}%` }">
+        <div class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 w-2.5 h-2.5 bg-[#ffe900] rotate-45"></div>
+      </div>
+    </div>
+
   </section>
 </template>

@@ -3,21 +3,63 @@ import { ref, computed } from 'vue'
 
 const activeCountryCode = ref('SN')
 
-// Totaux ajustés pour correspondre aux données de démo fournies
 const countries = [
-  { code: 'SN', name: 'Sénégal', total: 3 },
   { code: 'BJ', name: 'Bénin', total: 2 },
-  { code: 'CI', name: 'Côte d’Ivoire', total: 2 },
+  { code: 'BF', name: 'Burkina Faso', total: 5 },
+  { code: 'CI', name: 'Côte d’Ivoire', total: 5 },
+  { code: 'ML', name: 'Mali', total: 5 },
+  { code: 'NE', name: 'Niger', total: 8 },
+  { code: 'SN', name: 'Sénégal', total: 6 },
+  { code: 'TG', name: 'Togo', total: 2 }
 ]
 
 const universitiesData = [
-  { id: "SN-01", country: "SN", name: "Université Cheikh Anta Diop", acronym: "UCAD", location: "Dakar", founded: "1957", status: "Publique", logo: "https://images.unsplash.com/photo-1592280771190-3e2e4d571952?auto=format&fit=crop&w=400&q=80" },
-  { id: "SN-02", country: "SN", name: "Université Gaston Berger", acronym: "UGB", location: "Saint-Louis", founded: "1990", status: "Publique", logo: "" },
-  { id: "SN-03", country: "SN", name: "Université Amadou Mahtar Mbow", acronym: "UAM", location: "Diamniadio", founded: "2022", status: "Thématique", logo: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=400&q=80" },
-  { id: "BJ-01", country: "BJ", name: "Université d'Abomey-Calavi", acronym: "UAC", location: "Cotonou", founded: "1970", status: "Publique", logo: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=400&q=80" },
+  // Bénin
+  { id: "BJ-01", country: "BJ", name: "Université d'Abomey-Calavi", acronym: "UAC", location: "Abomey-Calavi", founded: "1970", status: "Publique", logo: "" },
   { id: "BJ-02", country: "BJ", name: "Université de Parakou", acronym: "UP", location: "Parakou", founded: "2001", status: "Publique", logo: "" },
-  { id: "CI-01", country: "CI", name: "Université Félix Houphouët-Boigny", acronym: "UFHB", location: "Abidjan", founded: "1964", status: "Publique", logo: "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=400&q=80" },
-  { id: "CI-02", country: "CI", name: "Université Nangui Abrogoua", acronym: "UNA", location: "Abidjan", founded: "1996", status: "Scientifique", logo: "" }
+
+  // Burkina Faso
+  { id: "BF-01", country: "BF", name: "Université Joseph Ki-Zerbo", acronym: "UJKZ", location: "Ouagadougou", founded: "1974", status: "Publique", logo: "" },
+  { id: "BF-02", country: "BF", name: "Université Nazi Boni", acronym: "UNB", location: "Bobo-Dioulasso", founded: "1995", status: "Publique", logo: "" },
+  { id: "BF-03", country: "BF", name: "Université Norbert Zongo", acronym: "UNZ", location: "Koudougou", founded: "2005", status: "Publique", logo: "" },
+  { id: "BF-04", country: "BF", name: "Université Saint Thomas d’Aquin", acronym: "USTA", location: "Ouagadougou", founded: "2004", status: "Privée", logo: "" },
+  { id: "BF-05", country: "BF", name: "Université Thomas Sankara", acronym: "UTS", location: "Ouagadougou", founded: "2007", status: "Publique", logo: "" },
+
+  // Côte d'Ivoire
+  { id: "CI-01", country: "CI", name: "Université d’Abobo-Adjamé", acronym: "UNA", location: "Abidjan", founded: "1995", status: "Publique", logo: "" },
+  { id: "CI-02", country: "CI", name: "Université Alassane Ouattara de Bouaké", acronym: "UAO", location: "Bouaké", founded: "1992", status: "Publique", logo: "" },
+  { id: "CI-03", country: "CI", name: "Université de Cocody Abidjan", acronym: "UFHB", location: "Abidjan", founded: "1964", status: "Publique", logo: "" },
+  { id: "CI-04", country: "CI", name: "Université Peleforo Gon Coulibaly", acronym: "UPGC", location: "Korhogo", founded: "2012", status: "Publique", logo: "" },
+  { id: "CI-05", country: "CI", name: "INPHB de Yamoussoukro", acronym: "INPHB", location: "Yamoussoukro", founded: "1996", status: "Grande École", logo: "" },
+
+  // Mali
+  { id: "ML-01", country: "ML", name: "Université de Ségou", acronym: "US", location: "Ségou", founded: "2009", status: "Publique", logo: "" },
+  { id: "ML-02", country: "ML", name: "Université de Sikasso", acronym: "USIK", location: "Sikasso", founded: "2010", status: "Publique", logo: "" },
+  { id: "ML-03", country: "ML", name: "Université des Sciences Juridiques et Politiques", acronym: "USJPB", location: "Bamako", founded: "2011", status: "Publique", logo: "" },
+  { id: "ML-04", country: "ML", name: "Université des Sciences Sociales et de Gestion", acronym: "USSGB", location: "Bamako", founded: "2011", status: "Publique", logo: "" },
+  { id: "ML-05", country: "ML", name: "Université des Sciences, des Techniques et des Technologies", acronym: "USTTB", location: "Bamako", founded: "2011", status: "Publique", logo: "" },
+
+  // Niger
+  { id: "NE-01", country: "NE", name: "Université Abdou Moumouni de Niamey", acronym: "UAM", location: "Niamey", founded: "1971", status: "Publique", logo: "" },
+  { id: "NE-02", country: "NE", name: "Université d’Agadez", acronym: "UA", location: "Agadez", founded: "2014", status: "Publique", logo: "" },
+  { id: "NE-03", country: "NE", name: "Université de Diffa", acronym: "UDA", location: "Diffa", founded: "2014", status: "Publique", logo: "" },
+  { id: "NE-04", country: "NE", name: "Université de Dosso", acronym: "UDO", location: "Dosso", founded: "2014", status: "Publique", logo: "" },
+  { id: "NE-05", country: "NE", name: "Université Djibo Hamani de Tahoua", acronym: "UDH", location: "Tahoua", founded: "2010", status: "Publique", logo: "" },
+  { id: "NE-06", country: "NE", name: "Université de Tilabéri", acronym: "UTI", location: "Tillabéri", founded: "2014", status: "Publique", logo: "" },
+  { id: "NE-07", country: "NE", name: "Université de Zinder", acronym: "UZ", location: "Zinder", founded: "2008", status: "Publique", logo: "" },
+  { id: "NE-08", country: "NE", name: "Université UDDDM de Maradi", acronym: "UDDDM", location: "Maradi", founded: "2008", status: "Publique", logo: "" },
+
+  // Sénégal
+  { id: "SN-01", country: "SN", name: "Université Iba Der Thiam de Thiès", acronym: "UIDT", location: "Thiès", founded: "2007", status: "Publique", logo: "" },
+  { id: "SN-02", country: "SN", name: "Université Alioune Diop de Bambey", acronym: "UADB", location: "Bambey", founded: "2007", status: "Publique", logo: "" },
+  { id: "SN-03", country: "SN", name: "Université Assane Seck de Ziguinchor", acronym: "UASZ", location: "Ziguinchor", founded: "2007", status: "Publique", logo: "" },
+  { id: "SN-04", country: "SN", name: "Université Gaston Berger de Saint-Louis", acronym: "UGB", location: "Saint-Louis", founded: "1990", status: "Publique", logo: "" },
+  { id: "SN-05", country: "SN", name: "Université Amadou Mahtar Mbow", acronym: "UAM", location: "Diamniadio", founded: "2022", status: "Thématique", logo: "" },
+  { id: "SN-06", country: "SN", name: "École Inter-États des Sciences et Médecine Vétérinaires", acronym: "EISMV", location: "Dakar", founded: "1968", status: "Inter-États", logo: "" },
+
+  // Togo
+  { id: "TG-01", country: "TG", name: "Université de Kara", acronym: "UK", location: "Kara", founded: "2004", status: "Publique", logo: "" },
+  { id: "TG-02", country: "TG", name: "Université de Lomé", acronym: "UL", location: "Lomé", founded: "1970", status: "Publique", logo: "" }
 ]
 
 // Séquence d'accents géométriques pour les ombres des cartes
@@ -37,7 +79,6 @@ const filteredUniversities = computed(() => {
 <template>
   <section class="relative py-24 md:py-32 bg-[#f8f9fa] border-t border-[#0071bd]/10 font-sans" aria-label="Cartographie des Membres">
     
-    <!-- NOUVEAU : Trame de fond unifiée (Losanges Traditionnels Bogolan) -->
     <div class="absolute inset-0 z-0 opacity-[0.03] pointer-events-none mix-blend-multiply">
       <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
         <defs>
@@ -49,24 +90,20 @@ const filteredUniversities = computed(() => {
       </svg>
     </div>
 
-    <!-- Définition des textures SVG pour les ombres portées -->
     <svg class="absolute w-0 h-0 pointer-events-none" xmlns="http://www.w3.org/2000/svg">
       <defs>
-        <!-- Motif Bleu : Losanges concentriques -->
         <pattern id="texture-african-blue" width="20" height="20" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
           <rect width="20" height="20" fill="#0071bd" />
           <path d="M10 0 L20 10 L10 20 L0 10 Z" fill="none" stroke="#005086" stroke-width="2" opacity="0.3" />
           <rect x="8" y="8" width="4" height="4" fill="#ffe900" opacity="0.8"/>
         </pattern>
 
-        <!-- Motif Vert : Chevrons / Zig-zag -->
         <pattern id="texture-african-green" width="20" height="20" patternUnits="userSpaceOnUse">
           <rect width="20" height="20" fill="#38a935" />
           <path d="M0 5 L10 15 L20 5" fill="none" stroke="#236b21" stroke-width="2" opacity="0.4" />
           <path d="M0 10 L10 20 L20 10" fill="none" stroke="#ffe900" stroke-width="1.5" opacity="0.6" />
         </pattern>
 
-        <!-- Motif Jaune : Damier / Tissage -->
         <pattern id="texture-african-yellow" width="16" height="16" patternUnits="userSpaceOnUse">
           <rect width="16" height="16" fill="#ffe900" />
           <path d="M0 0h8v8H0zM8 8h8v8H8z" fill="#c2b100" opacity="0.1" />
@@ -77,7 +114,6 @@ const filteredUniversities = computed(() => {
 
     <div class="relative max-w-[1400px] mx-auto px-6 lg:px-8 z-10">
       
-      <!-- EN-TÊTE INSTITUTIONNEL Harmonisé -->
       <header class="mb-20">
         <div class="flex items-center gap-4 mb-6">
           <span class="w-2.5 h-2.5 bg-[#38a935] rotate-45 transform"></span>
@@ -91,13 +127,11 @@ const filteredUniversities = computed(() => {
           Institutions membres <br />
           <span class="text-[#38a935] relative inline-block">
             du réseau académique.
-            <!-- Soulignement tissé -->
             <span class="absolute -bottom-2 left-0 w-1/3 h-[4px]" style="background: repeating-linear-gradient(45deg, #ffe900, #ffe900 4px, transparent 4px, transparent 8px);"></span>
           </span>
         </h2>
       </header>
 
-      <!-- NAVIGATION FILTRES (Style technique) -->
       <div class="flex flex-wrap gap-x-10 border-b border-[#0071bd]/10 mb-16 relative">
         <button 
           v-for="country in countries" 
@@ -105,12 +139,11 @@ const filteredUniversities = computed(() => {
           @click="activeCountryCode = country.code"
           class="relative pb-5 flex items-center gap-3 outline-none group bg-transparent border-none cursor-pointer"
         >
-          <!-- NOUVEAU : Puce losange devant l'onglet -->
           <span
-  class="w-1.5 h-1.5 rotate-45 transform opacity-0 transition-opacity duration-300"
-  :class="activeCountryCode === country.code ? 'opacity-100 bg-[#38a935]' : 'bg-[#0071bd]/40 group-hover:opacity-100'"
->
-</span>
+            class="w-1.5 h-1.5 rotate-45 transform transition-opacity duration-300"
+            :class="activeCountryCode === country.code ? 'opacity-100 bg-[#38a935]' : 'opacity-0 bg-[#0071bd]/40 group-hover:opacity-100'"
+          >
+          </span>
 
           <span 
             :class="[
@@ -126,10 +159,9 @@ const filteredUniversities = computed(() => {
               activeCountryCode === country.code ? 'bg-[#0071bd] text-white border-[#0071bd]' : 'bg-white text-[#0071bd]/40 border-[#0071bd]/10'
             ]"
           >
-            0{{ country.total }}
+            {{ String(country.total).padStart(2, '0') }}
           </span>
           
-          <!-- Soulignement tissé diagonal au lieu d'une ligne pleine -->
           <div 
             class="absolute bottom-[-1.5px] left-0 h-[4px] transition-all duration-300 ease-out"
             :style="activeCountryCode === country.code ? 'width: 100%; background: repeating-linear-gradient(45deg, #38a935, #38a935 2px, transparent 2px, transparent 4px);' : 'width: 0%;'"
@@ -137,7 +169,6 @@ const filteredUniversities = computed(() => {
         </button>
       </div>
 
-      <!-- RÉPERTOIRE D'ARTICLES (Grille à effets asymétriques) -->
       <div class="relative min-h-[400px]">
         <TransitionGroup 
           name="directory-fade" 
@@ -149,18 +180,15 @@ const filteredUniversities = computed(() => {
             :key="univ.id"
             class="group relative h-full cursor-default"
           >
-            <!-- NOUVEAU : Ombre portée texturée (Géométrique Africaine) -->
             <svg 
               class="absolute inset-0 translate-x-2 translate-y-2 transition-transform duration-300 ease-out z-0 w-full h-full"
             >
               <rect width="100%" height="100%" :fill="univ.accentPattern" />
             </svg>
             
-            <!-- Corps de carte principal (Se soulève au survol) -->
             <div class="relative bg-white border border-[#0071bd]/10 p-8 flex flex-col h-full z-10 transition-transform duration-300 ease-out group-hover:border-[#0071bd] group-hover:-translate-x-1 group-hover:-translate-y-1">
               
               <div class="flex justify-between items-start mb-8 gap-4">
-                <!-- Wrapper Logo strict avec bordure tissée -->
                 <div class="w-16 h-16 border border-[#0071bd]/10 bg-[#f8f9fa] flex items-center justify-center overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-500 relative shrink-0">
                   <div class="absolute inset-0 opacity-[0.03]" style="background: repeating-linear-gradient(45deg, #0071bd, #0071bd 1px, transparent 1px, transparent 3px);"></div>
                   <img 
@@ -169,21 +197,18 @@ const filteredUniversities = computed(() => {
                     :alt="univ.acronym"
                     class="w-full h-full object-cover relative z-10"
                   />
-                  <span v-else class="font-mono text-xs text-[#0071bd]/40 font-bold tracking-wider relative z-10">
+                  <span v-else class="font-mono text-xs text-[#0071bd]/40 font-bold tracking-wider relative z-10 text-center px-1">
                     {{ univ.acronym }}
                   </span>
                 </div>
-                <!-- Statut Institutionnel Harmonisé (avec micro-hachure) -->
                 <span class="px-3 py-1 text-[9px] font-bold uppercase tracking-[0.2em] bg-[#0071bd] text-white group-hover:bg-[#38a935] transition-colors duration-300 relative overflow-hidden shrink-0">
                    <span class="absolute inset-0 bg-white/10" style="background: repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(255,255,255,0.1) 2px, rgba(255,255,255,0.1) 4px);"></span>
                   {{ univ.status }}
                 </span>
               </div>
 
-              <!-- Bloc Identité Harmonisé (Tracking tight) -->
               <div class="flex-grow mb-10 relative">
-                <!-- Ligne de registre technique latérale -->
-             <div
+                <div
   class="absolute left-[-20px] top-0 bottom-0 w-[1px] opacity-10"
   style="background: repeating-linear-gradient(0deg, #0071bd, #0071bd 4px, transparent 4px, transparent 8px);"
 ></div>
@@ -196,7 +221,6 @@ const filteredUniversities = computed(() => {
                 </h3>
               </div>
 
-              <!-- Métadonnées Techniques Harmonisées (Pointillé + Puces Losanges) -->
               <div class="pt-6 border-t border-[#0071bd]/10 flex justify-between items-center text-[10px] font-mono font-bold uppercase tracking-[0.15em] text-[#0071bd]/50">
                 <div class="flex items-center gap-2">
                   <span class="w-1.5 h-1.5 bg-[#38a935] rotate-45 transform block opacity-70"></span>
@@ -212,7 +236,6 @@ const filteredUniversities = computed(() => {
         </TransitionGroup>
       </div>
 
-      <!-- PIED DE SECTION Harmonisé -->
       <footer class="mt-24 pt-8 border-t border-[#0071bd]/10 flex flex-col sm:flex-row justify-between items-center gap-6 text-[10px] font-bold uppercase tracking-[0.2em] text-[#0071bd]/40 px-6">
         <div class="flex items-center gap-3">
           <span class="w-2.5 h-2.5 bg-[#ffe900] rotate-45 block opacity-60"></span> 
