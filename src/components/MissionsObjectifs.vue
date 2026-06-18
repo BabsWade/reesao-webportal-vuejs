@@ -74,7 +74,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <section class="relative py-24 md:py-32 bg-[#0071bd] overflow-hidden font-sans border-y border-white/10" aria-label="Missions et Objectifs">
+  <section class="relative py-24 md:py-32 bg-[#0071bd]/50 overflow-hidden font-sans border-y border-white/10" aria-label="Missions et Objectifs">
     
     <svg width="0" height="0" class="absolute pointer-events-none">
       <defs>
@@ -90,9 +90,9 @@ onUnmounted(() => {
       <img 
         :src="bgImage" 
         alt="Architecture universitaire" 
-        class="w-full h-full object-cover grayscale opacity-[0.08] scale-105 select-none pointer-events-none"
+        class="w-full h-full object-cover scale-105 select-none pointer-events-none"
       />
-      <div class="absolute inset-0 bg-gradient-to-br from-[#38a935]/40 via-transparent to-[#38a935]/90"></div>
+      <div class="absolute inset-0 bg-gradient-to-br from-[#0071bd]/80 via-[#0071bd]/80 to-[#0071bd]/80"></div>
     </div>
 
     <div class="absolute inset-0 z-0 opacity-[0.03] pointer-events-none">

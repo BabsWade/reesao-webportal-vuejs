@@ -121,17 +121,17 @@ const thumbnail = slide1;
             <div class="flex flex-col relative group">
               <span class="text-4xl lg:text-5xl font-bold text-[#0071bd] mb-2 transition-transform origin-left group-hover:translate-x-1 duration-300 flex items-start gap-2">
                 <span class="w-2 h-2 mt-3 shrink-0 bg-[#ffe900] rotate-45 block"></span>
-                80+
+                30+
               </span>
-              <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-[#0071bd]/60">Vidéos institutionnelles</span>
+              <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-[#0071bd]/60">Responsables universitaires réunis lors de la CRPDG 2025 à Dakar</span>
             </div>
             
             <div class="flex flex-col relative group">
               <span class="text-4xl lg:text-5xl font-bold text-[#0071bd] mb-2 transition-transform origin-left group-hover:translate-x-1 duration-300 flex items-start gap-2">
                 <span class="w-2 h-2 mt-3 shrink-0 bg-[#38a935] rotate-45 block"></span>
-                35
+                15+
               </span>
-              <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-[#0071bd]/60">Conférences archivées</span>
+              <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-[#0071bd]/60">Universités représentées à la CRPDG 2025</span>
             </div>
 
             <div class="flex flex-col relative group">
