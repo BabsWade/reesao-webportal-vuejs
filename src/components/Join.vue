@@ -1,7 +1,28 @@
 <script setup>
-import { ref } from 'vue';
+import { ref, onMounted, onUnmounted } from 'vue';
 
 const activeTab = ref(0);
+const navContainer = ref(null);
+const canScrollRight = ref(true);
+
+// Vérifie s'il reste de l'espace pour scroller à droite
+const checkScroll = () => {
+  if (!navContainer.value) return;
+  const { scrollLeft, scrollWidth, clientWidth } = navContainer.value;
+  // Marge de tolérance de 2px pour les arrondis de calcul sur mobile
+  canScrollRight.value = Math.ceil(scrollLeft + clientWidth) < scrollWidth - 2;
+};
+
+// Écouteurs pour le redimensionnement de la fenêtre afin d'adapter l'indicateur
+onMounted(() => {
+  // Un léger délai pour s'assurer que le DOM est totalement rendu
+  setTimeout(checkScroll, 100);
+  window.addEventListener('resize', checkScroll);
+});
+
+onUnmounted(() => {
+  window.removeEventListener('resize', checkScroll);
+});
 
 // Données de la procédure d'adhésion
 const steps = [
@@ -84,13 +105,11 @@ const steps = [
 <template>
   <main class="relative bg-white font-sans min-h-screen pt-32 pb-20 overflow-hidden" aria-labelledby="adhesion-title">
     
-    <!-- Pattern Géométrique de fond global -->
     <div 
       class="absolute inset-0 z-0 opacity-[0.02] pointer-events-none mix-blend-multiply"
       style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M30 0l30 30-30 30L0 30zM15 30l15 15 15-15-15-15z\' fill=\'%230071bd\' fill-opacity=\'1\' fill-rule=\'evenodd\'/%3E%3C/svg%3E');"
     ></div>
 
-    <!-- Textures SVG pour les ombres portées -->
     <svg class="absolute w-0 h-0 pointer-events-none" xmlns="http://www.w3.org/2000/svg">
       <defs>
         <pattern id="texture-african-blue" width="20" height="20" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
@@ -111,12 +130,9 @@ const steps = [
       </defs>
     </svg>
 
-    <!-- Contenu Principal -->
     <div class="relative z-10 max-w-[1100px] mx-auto px-6 lg:px-8">
       
-      <!-- En-tête de la page -->
       <header class="text-center mb-16 flex flex-col items-center">
-        <!-- Signalétique -->
         <div class="flex gap-1 mb-6">
           <div class="w-8 h-1.5 bg-[#0071bd]"></div>
           <div class="w-8 h-1.5 bg-[#38a935]"></div>
@@ -131,57 +147,68 @@ const steps = [
         </p>
       </header>
 
-      <!-- SYSTÈME D'ONGLETS -->
       <div class="flex flex-col gap-10">
         
-        <!-- Navigation des onglets (scrollable sur mobile) -->
-        <nav 
-          class="flex overflow-x-auto hide-scrollbar gap-4 md:gap-6 pb-4 border-b border-[#001a2e]/10 snap-x" 
-          role="tablist" 
-          aria-label="Étapes d'adhésion"
-        >
-          <button
-            v-for="(step, index) in steps"
-            :key="'nav-' + index"
-            role="tab"
-            :aria-selected="activeTab === index"
-            :aria-controls="'tabpanel-' + index"
-            :id="'tab-' + index"
-            @click="activeTab = index"
-            class="relative flex-1 min-w-[140px] md:min-w-0 flex flex-col items-center justify-center p-4 transition-all duration-300 snap-center focus:outline-none group"
+        <div class="relative w-full">
+          
+          <nav 
+            ref="navContainer"
+            @scroll="checkScroll"
+            class="flex overflow-x-auto hide-scrollbar gap-4 md:gap-6 pb-4 border-b border-[#001a2e]/10 snap-x relative z-10" 
+            role="tablist" 
+            aria-label="Étapes d'adhésion"
           >
-            <!-- Ligne d'indication active au-dessus -->
-            <div 
-              class="absolute top-0 left-0 w-full h-[3px] transition-all duration-300 origin-left"
-              :class="activeTab === index ? step.bgColor : 'bg-transparent scale-x-0 group-hover:scale-x-100 group-hover:bg-[#001a2e]/10'"
-            ></div>
-
-            <div class="flex flex-col items-center gap-2 relative z-10">
+            <button
+              v-for="(step, index) in steps"
+              :key="'nav-' + index"
+              role="tab"
+              :aria-selected="activeTab === index"
+              :aria-controls="'tabpanel-' + index"
+              :id="'tab-' + index"
+              @click="activeTab = index"
+              class="relative flex-1 min-w-[140px] md:min-w-0 flex flex-col items-center justify-center p-4 transition-all duration-300 snap-center focus:outline-none group"
+            >
               <div 
-                class="w-12 h-12 flex items-center justify-center border-2 transition-all duration-300"
-                :class="activeTab === index ? [step.bgColor, 'border-transparent text-white shadow-lg rotate-12 scale-110'] : 'bg-white border-[#001a2e]/10 text-[#001a2e]/40 group-hover:border-[#0071bd]/30 group-hover:text-[#0071bd]'"
-              >
-                <i :class="[step.icon]" class="text-xl transition-transform duration-300 activeTab === index ? '-rotate-12' : ''"></i>
+                class="absolute top-0 left-0 w-full h-[3px] transition-all duration-300 origin-left"
+                :class="activeTab === index ? step.bgColor : 'bg-transparent scale-x-0 group-hover:scale-x-100 group-hover:bg-[#001a2e]/10'"
+              ></div>
+
+              <div class="flex flex-col items-center gap-2 relative z-10">
+                <div 
+                  class="w-12 h-12 flex items-center justify-center border-2 transition-all duration-300"
+                  :class="activeTab === index ? [step.bgColor, 'border-transparent text-white shadow-lg rotate-12 scale-110'] : 'bg-white border-[#001a2e]/10 text-[#001a2e]/40 group-hover:border-[#0071bd]/30 group-hover:text-[#0071bd]'"
+                >
+                  <i :class="[step.icon]" class="text-xl transition-transform duration-300 activeTab === index ? '-rotate-12' : ''"></i>
+                </div>
+                <div class="text-center mt-2">
+                  <span 
+                    class="block text-[10px] font-black uppercase tracking-[0.2em] mb-0.5 transition-colors"
+                    :class="activeTab === index ? step.color : 'text-[#001a2e]/40'"
+                  >
+                    Étape {{ step.number }}
+                  </span>
+                  <span 
+                    class="block text-sm font-bold transition-colors"
+                    :class="activeTab === index ? 'text-[#001a2e]' : 'text-[#001a2e]/60 group-hover:text-[#001a2e]'"
+                  >
+                    {{ step.shortTitle }}
+                  </span>
+                </div>
               </div>
-              <div class="text-center mt-2">
-                <span 
-                  class="block text-[10px] font-black uppercase tracking-[0.2em] mb-0.5 transition-colors"
-                  :class="activeTab === index ? step.color : 'text-[#001a2e]/40'"
-                >
-                  Étape {{ step.number }}
-                </span>
-                <span 
-                  class="block text-sm font-bold transition-colors"
-                  :class="activeTab === index ? 'text-[#001a2e]' : 'text-[#001a2e]/60 group-hover:text-[#001a2e]'"
-                >
-                  {{ step.shortTitle }}
-                </span>
+            </button>
+          </nav>
+
+          <transition name="fade">
+            <div v-if="canScrollRight" class="absolute top-0 right-0 bottom-4 w-24 flex items-center justify-end pointer-events-none md:hidden z-20">
+              <div class="absolute inset-0 bg-gradient-to-l from-white via-white/80 to-transparent"></div>
+              <div class="relative right-2 w-8 h-8 rounded-full bg-white shadow-[0_2px_10px_rgba(0,113,189,0.2)] flex items-center justify-center text-[#0071bd] animate-bounce-x">
+                <i class="ri-arrow-right-s-line text-lg"></i>
               </div>
             </div>
-          </button>
-        </nav>
+          </transition>
 
-        <!-- Contenu de l'onglet actif -->
+        </div>
+
         <div class="relative w-full min-h-[300px]">
           <transition name="tab-fade" mode="out-in">
             <div 
@@ -191,15 +218,12 @@ const steps = [
               :aria-labelledby="'tab-' + activeTab"
               class="relative w-full"
             >
-              <!-- Ombre portée texturée dynamique -->
               <svg class="absolute inset-0 translate-x-3 translate-y-3 md:translate-x-4 md:translate-y-4 z-0 w-full h-full pointer-events-none">
                 <rect width="100%" height="100%" :fill="steps[activeTab].pattern" />
               </svg>
 
-              <!-- Carte de contenu -->
               <div class="relative z-10 bg-white border border-[#001a2e]/10 p-8 md:p-12 lg:p-16 flex flex-col md:flex-row gap-8 lg:gap-12 items-start overflow-hidden">
                 
-                <!-- Filigrane géant du numéro -->
                 <div 
                   class="absolute -right-8 -bottom-16 text-[200px] font-black opacity-5 pointer-events-none select-none leading-none"
                   :style="{ color: steps[activeTab].patternFill }"
@@ -207,7 +231,6 @@ const steps = [
                   {{ steps[activeTab].number }}
                 </div>
 
-                <!-- Colonne Icône & Décoration -->
                 <div class="hidden md:flex flex-col items-center gap-4 shrink-0 mt-2">
                   <div class="w-16 h-16 flex items-center justify-center border-4" :class="steps[activeTab].borderColor">
                     <i :class="[steps[activeTab].icon, steps[activeTab].color]" class="text-3xl"></i>
@@ -215,7 +238,6 @@ const steps = [
                   <div class="w-0.5 h-full min-h-[100px] opacity-30" :style="`background: repeating-linear-gradient(to bottom, ${steps[activeTab].patternFill}, ${steps[activeTab].patternFill} 4px, transparent 4px, transparent 8px);`"></div>
                 </div>
 
-                <!-- Colonne Texte -->
                 <div class="flex-grow relative z-10">
                   <div class="flex items-center gap-3 mb-4">
                     <span class="w-2.5 h-2.5 rotate-45 block" :class="steps[activeTab].bgColor"></span>
@@ -232,7 +254,6 @@ const steps = [
                     {{ steps[activeTab].description }}
                   </p>
 
-                  <!-- Liste à puces s'il y en a -->
                   <ul v-if="steps[activeTab].list.length > 0" class="space-y-4 bg-[#f8fafc] p-6 border-l-4" :class="steps[activeTab].borderColor">
                     <li 
                       v-for="(item, iIdx) in steps[activeTab].list" 
@@ -251,7 +272,6 @@ const steps = [
         </div>
       </div>
 
-      <!-- Call to Action (CTA) de bas de page -->
       <div class="mt-24 border-t border-dashed border-[#0071bd]/20 pt-16 text-center flex flex-col items-center relative z-20">
         <span class="w-3 h-3 bg-[#ffe900] rotate-45 block mb-6"></span>
         <h2 class="text-xl md:text-2xl font-black text-[#001a2e] mb-4">Prêt à rejoindre le réseau ?</h2>
@@ -302,5 +322,28 @@ main {
 .tab-fade-leave-to {
   opacity: 0;
   transform: translateY(-15px) scale(0.98);
+}
+
+/* Animation de disparition fluide pour l'indicateur de scroll */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+/* Micro-animation personnalisée pour la flèche (mouvement de gauche à droite) */
+@keyframes bounce-horizontal {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(4px);
+  }
+}
+.animate-bounce-x {
+  animation: bounce-horizontal 1.5s infinite ease-in-out;
 }
 </style>
