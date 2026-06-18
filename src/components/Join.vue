@@ -1,178 +1,306 @@
 <script setup>
-import { ref } from 'vue'
+import { ref } from 'vue';
 
-const form = ref({
-  name: '',
-  email: '',
-  message: ''
-})
+const activeTab = ref(0);
 
-const isSubmitting = ref(false)
-const isSuccess = ref(false)
-
-const handleSubmit = () => {
-  isSubmitting.value = true
-  
-  setTimeout(() => {
-    isSubmitting.value = false
-    isSuccess.value = true
-    
-    setTimeout(() => {
-      isSuccess.value = false
-      form.value = { name: '', email: '', message: '' }
-    }, 4000)
-  }, 1200)
-}
+// Données de la procédure d'adhésion
+const steps = [
+  {
+    number: "01",
+    shortTitle: "Soumission",
+    title: "Soumission de la demande",
+    description: "L’établissement souhaitant adhérer au REESAO adresse une lettre officielle de demande d’adhésion au Président du Réseau, exprimant formellement son intérêt à rejoindre le REESAO.",
+    icon: "ri-mail-send-line",
+    color: "text-[#0071bd]",
+    bgColor: "bg-[#0071bd]",
+    borderColor: "border-[#0071bd]",
+    pattern: "url(#texture-african-blue)",
+    patternFill: "#0071bd",
+    list: []
+  },
+  {
+    number: "02",
+    shortTitle: "Dossier",
+    title: "Constitution du dossier",
+    description: "La lettre de demande est accompagnée d’un dossier numérique de présentation de l’établissement, comportant notamment les éléments suivants :",
+    icon: "ri-folder-info-line",
+    color: "text-[#38a935]",
+    bgColor: "bg-[#38a935]",
+    borderColor: "border-[#38a935]",
+    pattern: "url(#texture-african-green)",
+    patternFill: "#38a935",
+    list: [
+      "La date de création de l’établissement",
+      "Les filières ou programmes de formation proposés",
+      "Les effectifs d’étudiants et d’enseignants",
+      "Toute autre information pertinente permettant d’apprécier le profil et les activités de l’établissement"
+    ]
+  },
+  {
+    number: "03",
+    shortTitle: "Recevabilité",
+    title: "Condition de recevabilité",
+    description: "La demande d’adhésion est jugée recevable sous réserve de la participation effective d’un représentant officiel de l’établissement (le Recteur, le Directeur ou son représentant dûment mandaté) à la prochaine Conférence des Recteurs du REESAO.",
+    icon: "ri-presentation-fill",
+    color: "text-[#ffe900]",
+    bgColor: "bg-[#ffe900]",
+    borderColor: "border-[#ffe900]",
+    pattern: "url(#texture-african-yellow)",
+    patternFill: "#ffe900",
+    list: []
+  },
+  {
+    number: "04",
+    shortTitle: "Examen",
+    title: "Examen de la demande",
+    description: "Le dossier d’adhésion est soumis à l’examen de la Conférence des Recteurs, qui émet un premier avis sur la demande.",
+    icon: "ri-search-eye-line",
+    color: "text-[#0071bd]",
+    bgColor: "bg-[#0071bd]",
+    borderColor: "border-[#0071bd]",
+    pattern: "url(#texture-african-blue)",
+    patternFill: "#0071bd",
+    list: []
+  },
+  {
+    number: "05",
+    shortTitle: "Notification",
+    title: "Notification et suite",
+    description: "En cas d’avis favorable, le Président du REESAO adresse à l’établissement une notification officielle comprenant :",
+    icon: "ri-checkbox-circle-line",
+    color: "text-[#38a935]",
+    bgColor: "bg-[#38a935]",
+    borderColor: "border-[#38a935]",
+    pattern: "url(#texture-african-green)",
+    patternFill: "#38a935",
+    list: [
+      "Une lettre d’acceptation provisoire",
+      "La liste des pièces et documents complémentaires requis pour la finalisation du processus d’adhésion"
+    ]
+  }
+];
 </script>
 
 <template>
-  <section class="grid grid-cols-1 lg:grid-cols-12 border-y border-[#0071bd]/10 select-none bg-white font-sans" aria-label="Portail d'adhésion">
+  <main class="relative bg-white font-sans min-h-screen pt-32 pb-20 overflow-hidden" aria-labelledby="adhesion-title">
     
-    <!-- COLONNE A : BLOC INSTITUTIONNEL (Bleu Nuit Profond) -->
-    <div class="lg:col-span-5 bg-[#38a935] p-12 lg:p-20 flex flex-col justify-between text-white relative overflow-hidden">
-      
-      <!-- Grille technique intégrée au fond sombre -->
-      <div class="absolute inset-0 z-0 opacity-[0.04] pointer-events-none">
-        <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <pattern id="grid-join-left" width="30" height="30" patternUnits="userSpaceOnUse">
-              <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#ffffff" stroke-width="1"/>
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#grid-join-left)" />
-        </svg>
-      </div>
+    <!-- Pattern Géométrique de fond global -->
+    <div 
+      class="absolute inset-0 z-0 opacity-[0.02] pointer-events-none mix-blend-multiply"
+      style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M30 0l30 30-30 30L0 30zM15 30l15 15 15-15-15-15z\' fill=\'%230071bd\' fill-opacity=\'1\' fill-rule=\'evenodd\'/%3E%3C/svg%3E');"
+    ></div>
 
-      <div class="space-y-12 relative z-10">
-        <div class="flex items-center gap-3 font-mono text-[9px] font-bold uppercase tracking-[0.25em] text-white/50">
-          <span class="w-1.5 h-1.5 bg-[#38a935]"></span>
-          <span>Secrétariat Général // Liaison Administrative</span>
+    <!-- Textures SVG pour les ombres portées -->
+    <svg class="absolute w-0 h-0 pointer-events-none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <pattern id="texture-african-blue" width="20" height="20" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+          <rect width="20" height="20" fill="#0071bd" />
+          <path d="M10 0 L20 10 L10 20 L0 10 Z" fill="none" stroke="#0071bd" stroke-width="2" opacity="0.3" />
+          <rect x="8" y="8" width="4" height="4" fill="#ffe900" opacity="0.8"/>
+        </pattern>
+        <pattern id="texture-african-green" width="20" height="20" patternUnits="userSpaceOnUse">
+          <rect width="20" height="20" fill="#38a935" />
+          <path d="M0 5 L10 15 L20 5" fill="none" stroke="#0071bd" stroke-width="2" opacity="0.4" />
+          <path d="M0 10 L10 20 L20 10" fill="none" stroke="#ffe900" stroke-width="1.5" opacity="0.6" />
+        </pattern>
+        <pattern id="texture-african-yellow" width="16" height="16" patternUnits="userSpaceOnUse">
+          <rect width="16" height="16" fill="#ffe900" />
+          <path d="M0 0h8v8H0zM8 8h8v8H8z" fill="#0071bd" opacity="0.1" />
+          <path d="M0 8h16M8 0v16" fill="none" stroke="#38a935" stroke-width="1" opacity="0.4" />
+        </pattern>
+      </defs>
+    </svg>
+
+    <!-- Contenu Principal -->
+    <div class="relative z-10 max-w-[1100px] mx-auto px-6 lg:px-8">
+      
+      <!-- En-tête de la page -->
+      <header class="text-center mb-16 flex flex-col items-center">
+        <!-- Signalétique -->
+        <div class="flex gap-1 mb-6">
+          <div class="w-8 h-1.5 bg-[#0071bd]"></div>
+          <div class="w-8 h-1.5 bg-[#38a935]"></div>
+          <div class="w-8 h-1.5 bg-[#ffe900]"></div>
         </div>
-
-        <h3 class="text-3xl lg:text-4xl font-bold leading-[1.2] tracking-tight text-white">
-          Une architecture collaborative au service de <br />
-          <span class="text-[#ffe900]">l’enseignement supérieur</span> ouest-africain.
-        </h3>
-      </div>
-
-      <div class="pt-16 border-t border-white/10 flex items-center justify-between font-mono text-[9px] font-bold text-white/40 uppercase tracking-[0.25em] relative z-10">
-        <span>Hub Régional REESAO</span>
-        <span>[UTC +0]</span>
-      </div>
-      
-    </div>
-
-    <!-- COLONNE B : BLOC FORMULAIRE (Blanc Épuré) -->
-    <div class="lg:col-span-7 bg-white p-12 lg:p-20 flex flex-col justify-center lg:border-l border-[#0071bd]/10 relative">
-      
-      <div class="max-w-xl w-full mx-auto">
         
-        <!-- En-tête formulaire -->
-        <div class="mb-16">
-          <h2 class="text-3xl font-bold text-[#0071bd] tracking-tight mb-4">
-            Requête institutionnelle
-          </h2>
-          <p class="text-base font-light text-[#0071bd]/60 leading-relaxed max-w-md border-l-2 border-[#ffe900] pl-4">
-            Veuillez renseigner les informations ci-dessous pour acheminer votre demande auprès du bureau de la présidence.
-          </p>
-        </div>
+        <h1 id="adhesion-title" class="text-3xl md:text-4xl lg:text-5xl font-black text-[#001a2e] uppercase tracking-tighter mb-4">
+          Procédure d'adhésion
+        </h1>
+        <p class="text-sm md:text-base font-bold text-[#0071bd] uppercase tracking-[0.2em] max-w-2xl text-center">
+          Rejoignez le Réseau pour l'Excellence de l'Enseignement Supérieur
+        </p>
+      </header>
 
-        <!-- Animation de changement d'état -->
-        <Transition name="form-fade" mode="out-in">
-          
-          <!-- ÉTAT SUCCÈS -->
-          <div v-if="isSuccess" class="py-12 flex flex-col items-start space-y-6">
-            <div class="w-14 h-14 bg-[#38a935] flex items-center justify-center text-white">
-              <i class="ri-check-line text-2xl font-bold"></i>
-            </div>
-            <div class="space-y-2">
-              <h4 class="text-xl font-bold text-[#0071bd]">Transmission validée</h4>
-              <p class="font-mono text-[10px] font-bold text-[#0071bd]/50 uppercase tracking-[0.2em] leading-relaxed">
-                Document indexé avec succès. <br />Un accusé de réception officiel sera transmis par voie électronique.
-              </p>
-            </div>
-          </div>
+      <!-- SYSTÈME D'ONGLETS -->
+      <div class="flex flex-col gap-10">
+        
+        <!-- Navigation des onglets (scrollable sur mobile) -->
+        <nav 
+          class="flex overflow-x-auto hide-scrollbar gap-4 md:gap-6 pb-4 border-b border-[#001a2e]/10 snap-x" 
+          role="tablist" 
+          aria-label="Étapes d'adhésion"
+        >
+          <button
+            v-for="(step, index) in steps"
+            :key="'nav-' + index"
+            role="tab"
+            :aria-selected="activeTab === index"
+            :aria-controls="'tabpanel-' + index"
+            :id="'tab-' + index"
+            @click="activeTab = index"
+            class="relative flex-1 min-w-[140px] md:min-w-0 flex flex-col items-center justify-center p-4 transition-all duration-300 snap-center focus:outline-none group"
+          >
+            <!-- Ligne d'indication active au-dessus -->
+            <div 
+              class="absolute top-0 left-0 w-full h-[3px] transition-all duration-300 origin-left"
+              :class="activeTab === index ? step.bgColor : 'bg-transparent scale-x-0 group-hover:scale-x-100 group-hover:bg-[#001a2e]/10'"
+            ></div>
 
-          <!-- FORMULAIRE ACTIF -->
-          <form v-else @submit.prevent="handleSubmit" class="space-y-10">
-            
-            <!-- Champ : Nom -->
-            <div class="relative group flex flex-col space-y-2">
-              <label class="text-[9px] font-mono font-bold text-[#0071bd]/40 uppercase tracking-[0.2em] group-focus-within:text-[#38a935] transition-colors duration-300">
-                Nom complet ou Institution
-              </label>
-              <input 
-                v-model="form.name"
-                type="text" 
-                required
-                class="w-full bg-transparent border-b border-[#0071bd]/10 py-3 text-base text-[#0071bd] transition-all duration-300 rounded-none outline-none focus:border-[#0071bd]"
-              />
-            </div>
-
-            <!-- Champ : Email -->
-            <div class="relative group flex flex-col space-y-2">
-              <label class="text-[9px] font-mono font-bold text-[#0071bd]/40 uppercase tracking-[0.2em] group-focus-within:text-[#38a935] transition-colors duration-300">
-                Adresse électronique officielle
-              </label>
-              <input 
-                v-model="form.email"
-                type="email" 
-                required
-                class="w-full bg-transparent border-b border-[#0071bd]/10 py-3 text-base text-[#0071bd] transition-all duration-300 rounded-none outline-none focus:border-[#0071bd]"
-              />
-            </div>
-
-            <!-- Champ : Message -->
-            <div class="relative group flex flex-col space-y-2">
-              <label class="text-[9px] font-mono font-bold text-[#0071bd]/40 uppercase tracking-[0.2em] group-focus-within:text-[#38a935] transition-colors duration-300">
-                Objet & descriptif de la requête
-              </label>
-              <textarea 
-                v-model="form.message"
-                rows="3"
-                required
-                class="w-full bg-transparent border-b border-[#0071bd]/10 py-3 text-base text-[#0071bd] transition-all duration-300 rounded-none outline-none resize-none focus:border-[#0071bd]"
-              ></textarea>
-            </div>
-
-            <!-- Bouton de soumission Asymétrique -->
-            <div class="pt-6 relative group/btn">
-              <!-- Fond décalé jaune -->
-              <div class="absolute bottom-[-4px] left-1 w-full sm:w-auto h-full bg-[#38a935] translate-x-1.5 translate-y-1.5 transition-transform duration-300 group-hover/btn:translate-x-1 group-hover/btn:translate-y-1"></div>
-              
-              <button 
-                type="submit"
-                :disabled="isSubmitting"
-                class="relative w-full sm:w-auto bg-[#38a935] text-white px-10 py-4 text-[10px] font-mono font-bold uppercase tracking-[0.25em] transition-all duration-300 ease-out border border-[#0071bd] disabled:bg-[#0071bd]/20 disabled:text-[#0071bd]/40 disabled:border-transparent z-10"
+            <div class="flex flex-col items-center gap-2 relative z-10">
+              <div 
+                class="w-12 h-12 flex items-center justify-center border-2 transition-all duration-300"
+                :class="activeTab === index ? [step.bgColor, 'border-transparent text-white shadow-lg rotate-12 scale-110'] : 'bg-white border-[#001a2e]/10 text-[#001a2e]/40 group-hover:border-[#0071bd]/30 group-hover:text-[#0071bd]'"
               >
-                <span v-if="isSubmitting" class="flex items-center justify-center gap-2">
-                  Traitement en cours...
+                <i :class="[step.icon]" class="text-xl transition-transform duration-300 activeTab === index ? '-rotate-12' : ''"></i>
+              </div>
+              <div class="text-center mt-2">
+                <span 
+                  class="block text-[10px] font-black uppercase tracking-[0.2em] mb-0.5 transition-colors"
+                  :class="activeTab === index ? step.color : 'text-[#001a2e]/40'"
+                >
+                  Étape {{ step.number }}
                 </span>
-                <span v-else class="flex items-center justify-center gap-3">
-                  Soumettre la requête
-                  <i class="ri-arrow-right-up-line text-xs transition-transform duration-300 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5"></i>
+                <span 
+                  class="block text-sm font-bold transition-colors"
+                  :class="activeTab === index ? 'text-[#001a2e]' : 'text-[#001a2e]/60 group-hover:text-[#001a2e]'"
+                >
+                  {{ step.shortTitle }}
                 </span>
-              </button>
+              </div>
             </div>
+          </button>
+        </nav>
 
-          </form>
-        </Transition>
+        <!-- Contenu de l'onglet actif -->
+        <div class="relative w-full min-h-[300px]">
+          <transition name="tab-fade" mode="out-in">
+            <div 
+              :key="activeTab"
+              role="tabpanel"
+              :id="'tabpanel-' + activeTab"
+              :aria-labelledby="'tab-' + activeTab"
+              class="relative w-full"
+            >
+              <!-- Ombre portée texturée dynamique -->
+              <svg class="absolute inset-0 translate-x-3 translate-y-3 md:translate-x-4 md:translate-y-4 z-0 w-full h-full pointer-events-none">
+                <rect width="100%" height="100%" :fill="steps[activeTab].pattern" />
+              </svg>
 
+              <!-- Carte de contenu -->
+              <div class="relative z-10 bg-white border border-[#001a2e]/10 p-8 md:p-12 lg:p-16 flex flex-col md:flex-row gap-8 lg:gap-12 items-start overflow-hidden">
+                
+                <!-- Filigrane géant du numéro -->
+                <div 
+                  class="absolute -right-8 -bottom-16 text-[200px] font-black opacity-5 pointer-events-none select-none leading-none"
+                  :style="{ color: steps[activeTab].patternFill }"
+                >
+                  {{ steps[activeTab].number }}
+                </div>
+
+                <!-- Colonne Icône & Décoration -->
+                <div class="hidden md:flex flex-col items-center gap-4 shrink-0 mt-2">
+                  <div class="w-16 h-16 flex items-center justify-center border-4" :class="steps[activeTab].borderColor">
+                    <i :class="[steps[activeTab].icon, steps[activeTab].color]" class="text-3xl"></i>
+                  </div>
+                  <div class="w-0.5 h-full min-h-[100px] opacity-30" :style="`background: repeating-linear-gradient(to bottom, ${steps[activeTab].patternFill}, ${steps[activeTab].patternFill} 4px, transparent 4px, transparent 8px);`"></div>
+                </div>
+
+                <!-- Colonne Texte -->
+                <div class="flex-grow relative z-10">
+                  <div class="flex items-center gap-3 mb-4">
+                    <span class="w-2.5 h-2.5 rotate-45 block" :class="steps[activeTab].bgColor"></span>
+                    <span class="text-xs font-black uppercase tracking-[0.2em]" :class="steps[activeTab].color">
+                      Étape {{ steps[activeTab].number }}
+                    </span>
+                  </div>
+                  
+                  <h2 class="text-2xl md:text-3xl lg:text-4xl font-black text-[#001a2e] mb-6">
+                    {{ steps[activeTab].title }}
+                  </h2>
+                  
+                  <p class="text-[#001a2e]/70 leading-relaxed text-base md:text-lg mb-8">
+                    {{ steps[activeTab].description }}
+                  </p>
+
+                  <!-- Liste à puces s'il y en a -->
+                  <ul v-if="steps[activeTab].list.length > 0" class="space-y-4 bg-[#f8fafc] p-6 border-l-4" :class="steps[activeTab].borderColor">
+                    <li 
+                      v-for="(item, iIdx) in steps[activeTab].list" 
+                      :key="'list-' + activeTab + '-' + iIdx"
+                      class="flex items-start gap-3"
+                    >
+                      <i class="ri-arrow-right-s-fill mt-1 text-xl" :class="steps[activeTab].color"></i>
+                      <span class="text-[#001a2e]/80 leading-snug">{{ item }}</span>
+                    </li>
+                  </ul>
+                </div>
+
+              </div>
+            </div>
+          </transition>
+        </div>
       </div>
-    </div>
 
-  </section>
+      <!-- Call to Action (CTA) de bas de page -->
+      <div class="mt-24 border-t border-dashed border-[#0071bd]/20 pt-16 text-center flex flex-col items-center relative z-20">
+        <span class="w-3 h-3 bg-[#ffe900] rotate-45 block mb-6"></span>
+        <h2 class="text-xl md:text-2xl font-black text-[#001a2e] mb-4">Prêt à rejoindre le réseau ?</h2>
+        <p class="text-[#001a2e]/60 text-sm max-w-lg mb-8">
+          Préparez votre dossier et contactez le bureau exécutif pour initier la première étape de votre adhésion.
+        </p>
+        
+        <a href="mailto:contact@reesao.org" class="relative group inline-block">
+          <div class="absolute inset-0 bg-[#ffe900] translate-x-1.5 translate-y-1.5 transition-transform duration-300 group-hover:translate-x-2 group-hover:translate-y-2"></div>
+          <div class="relative bg-[#0071bd] text-white px-8 py-4 text-xs md:text-sm font-bold uppercase tracking-[0.2em] border border-white/20 flex items-center gap-3 transition-colors group-hover:bg-[#001a2e]">
+            <i class="ri-mail-send-line text-lg"></i>
+            Envoyer une demande
+          </div>
+        </a>
+      </div>
+
+    </div>
+  </main>
 </template>
 
 <style scoped>
-.form-fade-enter-active,
-.form-fade-leave-active {
-  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+/* Adoucissement global de la typo */
+main {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-.form-fade-enter-from,
-.form-fade-leave-to {
+/* Masquer la scrollbar pour le menu des onglets sur mobile tout en gardant le défilement */
+.hide-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
+}
+
+/* Animations de transition pour le changement d'onglet */
+.tab-fade-enter-active,
+.tab-fade-leave-active {
+  transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.tab-fade-enter-from {
   opacity: 0;
-  transform: translateY(10px);
+  transform: translateY(15px) scale(0.98);
+}
+
+.tab-fade-leave-to {
+  opacity: 0;
+  transform: translateY(-15px) scale(0.98);
 }
 </style>
