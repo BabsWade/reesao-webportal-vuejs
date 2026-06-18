@@ -62,7 +62,7 @@ const toggleMarquee = (state) => {
 </script>
 
 <template>
-  <section class="relative bg-white font-sans overflow-hidden border-y border-[#0071bd]/10 py-12 lg:py-16" aria-label="Bandeau Indicateurs et Partenaires">
+  <section class="relative bg-white pt-500 font-sans overflow-hidden border-y border-[#0071bd]/10 py-12 lg:py-16 scroll-mt-[120]" id="stats" aria-label="Bandeau Indicateurs et Partenaires">
     
     <div 
       class="absolute inset-0 z-0 opacity-[0.02] pointer-events-none mix-blend-multiply"

@@ -317,3 +317,9 @@ onBeforeUnmount(() => {
   window.removeEventListener('scroll', handleScroll)
 })
 </script>
+<style>
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 120px;
+}
+</style>

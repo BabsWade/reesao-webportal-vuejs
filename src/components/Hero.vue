@@ -151,7 +151,7 @@ onBeforeUnmount(() => {
 
           <div class="flex flex-wrap items-center gap-8 mt-14">
             
-            <a href="#decouvrir" class="relative group">
+            <a href="#stats" class="relative group">
               <div class="absolute inset-0 bg-[#38a935] translate-x-3 translate-y-3 transition-transform duration-300 ease-out group-hover:translate-x-1.5 group-hover:translate-y-1.5"></div>
               <div class="relative bg-[#ffe900] text-[#0071bd] px-8 py-4 text-xs font-bold uppercase tracking-[0.2em] flex items-center gap-3 border-2 border-transparent group-hover:border-[#0071bd] transition-colors">
                 <span class="w-1.5 h-1.5 bg-[#0071bd] rotate-45 mr-1"></span>

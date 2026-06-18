@@ -2,7 +2,9 @@
   <div class="font-sans">
    
     <Hero />
+   <section id="stats">
     <Stats />
+  </section>
     <MeetingSection />
     <President />
        
