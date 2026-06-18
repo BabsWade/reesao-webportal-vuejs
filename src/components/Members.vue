@@ -77,18 +77,12 @@ const filteredUniversities = computed(() => {
 </script>
 
 <template>
-  <section class="relative py-24 md:py-32 bg-[#f8f9fa] border-t border-[#0071bd]/10 font-sans" aria-label="Cartographie des Membres">
+  <section class="relative py-24 md:py-32 bg-[#0071bd]/3 border-t border-[#0071bd]/10 font-sans" aria-label="Cartographie des Membres">
     
-    <div class="absolute inset-0 z-0 opacity-[0.03] pointer-events-none mix-blend-multiply">
-      <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <pattern id="grid-members-diamonds" width="60" height="60" patternUnits="userSpaceOnUse">
-            <path d="M20 0 L40 20 L20 40 L0 20 Z" fill="none" stroke="#0071bd" stroke-width="1.5" />
-          </pattern>
-        </defs>
-        <rect width="100%" height="100%" fill="url(#grid-members-diamonds)" />
-      </svg>
-    </div>
+    <div 
+        class="absolute inset-0 z-0 opacity-[0.03] pointer-events-none mix-blend-overlay"
+        style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M30 0l30 30-30 30L0 30zM15 30l15 15 15-15-15-15z\' fill=\'%230071bd\' fill-opacity=\'0.8\' fill-rule=\'evenodd\'/%3E%3C/svg%3E');"
+      ></div>
 
     <svg class="absolute w-0 h-0 pointer-events-none" xmlns="http://www.w3.org/2000/svg">
       <defs>
