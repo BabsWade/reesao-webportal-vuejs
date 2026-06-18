@@ -92,7 +92,7 @@ onUnmounted(() => {
         alt="Architecture universitaire" 
         class="w-full h-full object-cover scale-105 select-none pointer-events-none"
       />
-      <div class="absolute inset-0 bg-gradient-to-br from-[#0071bd]/80 via-[#0071bd]/80 to-[#0071bd]/80"></div>
+      <div class="absolute inset-0 bg-gradient-to-br from-[#38a935]/80 via-[#38a935]/80 to-[#0071bd]/80"></div>
     </div>
 
     <div class="absolute inset-0 z-0 opacity-[0.03] pointer-events-none">
@@ -111,17 +111,17 @@ onUnmounted(() => {
       <header class="mb-16 lg:mb-20 max-w-4xl mx-auto text-center flex flex-col items-center">
         <div class="flex items-center justify-center gap-4 mb-6">
           <span class="w-2.5 h-2.5 bg-[#ffe900] rotate-45 block"></span>
-          <span class="w-12 h-[2px]" style="background: repeating-linear-gradient(45deg, #38a935, #38a935 2px, transparent 2px, transparent 4px);"></span>
+          <span class="w-12 h-[2px]" style="background: repeating-linear-gradient(45deg, #0071bd, #0071bd 2px, transparent 2px, transparent 4px);"></span>
           <span class="text-[#ffe900] text-[11px] font-bold uppercase tracking-[0.2em] font-mono">
             Directives Stratégiques
           </span>
-          <span class="w-12 h-[2px]" style="background: repeating-linear-gradient(45deg, #38a935, #38a935 2px, transparent 2px, transparent 4px);"></span>
+          <span class="w-12 h-[2px]" style="background: repeating-linear-gradient(45deg, #0071bd, #0071bd 2px, transparent 2px, transparent 4px);"></span>
           <span class="w-2.5 h-2.5 bg-[#ffe900] rotate-45 block"></span>
         </div>
         
         <h2 class="text-4xl md:text-5xl lg:text-[56px] text-white font-bold leading-[1.05] tracking-tight">
           Nos engagements fondamentaux <br />
-          <span class="text-[#38a935] relative inline-block mt-2">
+          <span class="text-[#0071bd] relative inline-block mt-2">
             pour l'espace ouest-africain.
             <span class="absolute -bottom-3 right-0 w-1/3 h-[4px]" style="background: repeating-linear-gradient(45deg, #ffe900, #ffe900 4px, transparent 4px, transparent 8px);"></span>
           </span>
