@@ -134,19 +134,19 @@ const goToArticle = (slug) => {
       </defs>
     </svg>
 
-    <section class="relative pt-44 pb-24 lg:pt-52 lg:pb-32 bg-[#0071bd] border-b border-[#0071bd]/20 overflow-hidden">
+       <section class="relative pt-44 pb-24 lg:pt-52 lg:pb-32 bg-[#38a935] border-b border-[#0071bd]/20 overflow-hidden">
       <div class="absolute inset-0 z-0">
         <img 
           :src="slide1" 
           alt="Espace académique REESAO" 
-          class="w-full h-full object-cover  contrast-125"
+          class="w-full h-full object-cover grayscale opacity-15 scale-105 contrast-125"
         />
-        <div class="absolute inset-0 bg-gradient-to-t from-[#0071bd]/0 via-transparent to-[#0071bd]/0"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-[#0071bd]/50 via-transparent to-[#38a935]"></div>
       </div>
       
       <div 
         class="absolute inset-0 z-0 opacity-[0.03] pointer-events-none mix-blend-overlay"
-        style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M30 0l30 30-30 30L0 30zM15 30l15 15 15-15-15-15z\' fill=\'%23ffffff\' fill-opacity=\'0.8\' fill-rule=\'evenodd\'/%3E%3C/svg%3E');"
+        style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M30 0l30 30-30 30L0 30zM15 30l15 15 15-15-15-15z\' fill=\'%23ffffff\' fill-opacity=\'1\' fill-rule=\'evenodd\'/%3E%3C/svg%3E');"
       ></div>
 
       <div class="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-8">

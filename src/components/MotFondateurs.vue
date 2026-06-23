@@ -35,53 +35,43 @@ const heroBg = "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?aut
     </svg>
 
     <!-- BANNER DE PAGE (HERO) - Harmonisé -->
-    <section class="relative pt-40 pb-20 lg:pt-48 lg:pb-24 bg-white border-b border-[#0071bd]/10 overflow-hidden">
-      <!-- NOUVEAU : Fond géométrique unifié (Losanges) en filigrane bleu clair -->
-      <div 
-        class="absolute inset-0 z-0 opacity-[0.03] pointer-events-none mix-blend-multiply"
-        style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M30 0l30 30-30 30L0 30zM15 30l15 15 15-15-15-15z\' fill=\'%230071bd\' fill-opacity=\'0.2\' fill-rule=\'evenodd\'/%3E%3C/svg%3E');"
-      ></div>
-
-      <!-- Image de fond avec overlay -->
-      <div class="absolute inset-0 z-0 opacity-20">
+   <section class="relative pt-44 pb-24 lg:pt-52 lg:pb-32 bg-[#38a935] border-b border-[#0071bd]/20 overflow-hidden">
+      <div class="absolute inset-0 z-0">
         <img 
           :src="slide1" 
-          alt="Campus universitaire" 
-          class="w-full h-full object-cover grayscale scale-105"
+          alt="Espace académique REESAO" 
+          class="w-full h-full object-cover grayscale opacity-15 scale-105 contrast-125"
         />
+        <div class="absolute inset-0 bg-gradient-to-t from-[#0071bd]/50 via-transparent to-[#38a935]"></div>
       </div>
+      
+      <div 
+        class="absolute inset-0 z-0 opacity-[0.03] pointer-events-none mix-blend-overlay"
+        style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M30 0l30 30-30 30L0 30zM15 30l15 15 15-15-15-15z\' fill=\'%23ffffff\' fill-opacity=\'1\' fill-rule=\'evenodd\'/%3E%3C/svg%3E');"
+      ></div>
 
-      <!-- Contenu du Banner -->
       <div class="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-8">
-        
-        <!-- Fil d'Ariane - Harmonisé (Police mono, uppercase) -->
-        <nav class="flex items-center gap-3 text-[10px] lg:text-[11px] font-mono font-bold uppercase tracking-[0.2em] text-[#0071bd]/60 mb-12" aria-label="Breadcrumb">
-          <a href="/" class="hover:text-[#38a935] transition-colors duration-300">Accueil</a>
-          <span class="w-4 h-[1px] bg-[#0071bd]/20"></span>
-          <span class="text-[#0071bd]">Mot des fondateurs du REESAO</span>
+        <nav class="flex items-center gap-2 text-[10px] lg:text-[11px] font-mono font-bold uppercase tracking-[0.2em] text-white/40 mb-8" aria-label="Breadcrumb">
+          <router-link to="/" class="hover:text-[#ffe900] transition-colors duration-300">Accueil</router-link>
+          <i class="ri-arrow-right-s-line text-sm opacity-50"></i>
+          <span class="text-[#ffe900]">mots des fondateurs</span>
         </nav>
 
-        <!-- Titre de la page - Style News Headline -->
-        <div class="flex flex-col md:flex-row md:items-end justify-between gap-8">
-          <header class="max-w-4xl">
-            <!-- Label Harmonisé -->
-            <div class="flex items-center gap-4 mb-6">
-              <span class="w-2.5 h-2.5 bg-[#ffe900] rotate-45 block"></span>
-              <span class="w-12 h-[2px]" style="background: repeating-linear-gradient(45deg, #38a935, #38a935 2px, transparent 2px, transparent 4px);"></span>
-              <span class="text-[#38a935] text-[11px] font-bold uppercase tracking-[0.2em]">
-                Histoire & Vision
-              </span>
-            </div>
-
-            <h1 class="text-4xl md:text-5xl lg:text-[56px] text-[#0071bd] font-bold leading-[1.05] tracking-tight">
-              Mot des fondateurs <br />
-              <span class="text-[#38a935] relative inline-block mt-2">
-                du REESAO.
-                <!-- Soulignement tissé -->
-                <span class="absolute -bottom-2 right-0 w-1/3 h-[4px]" style="background: repeating-linear-gradient(45deg, #ffe900, #ffe900 4px, transparent 4px, transparent 8px);"></span>
+        <div class="grid lg:grid-cols-12 gap-8 items-end">
+          <div class="lg:col-span-8">
+            <h1 class="text-4xl md:text-5xl lg:text-[64px] text-white font-black leading-[1.05] tracking-tight">
+             Mots des fondateurs <br />
+              <span class="text-[#ffe900] relative inline-block mt-2">
+                du Réseau.
+                <span class="absolute -bottom-3 left-0 w-1/3 h-[4px]" style="background: repeating-linear-gradient(45deg, #38a935, #38a935 4px, transparent 4px, transparent 8px);"></span>
               </span>
             </h1>
-          </header>
+          </div>
+          <div class="lg:col-span-4 lg:pb-2">
+            <p class="text-white/60 font-light text-sm lg:text-base leading-relaxed pl-6 border-l-2 border-[#38a935]">
+              Le portail centralisé des publications, des réformes structurelles et des annonces officielles des universités membres.
+            </p>
+          </div>
         </div>
       </div>
     </section>
@@ -201,7 +191,7 @@ const heroBg = "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?aut
               <!-- Sous-sections structurées - Harmonisé (Puces losanges, hachures) -->
               <div class="grid gap-10 pl-0 lg:pl-10 relative">
                  <!-- Bordure latérale tissée plus marquée pour la sous-liste -->
-                <div class="absolute left-0 top-0 bottom-0 w-[2px]" style="background: repeating-linear-gradient(0deg, #0071bd]/10, #0071bd]/10 4px, transparent 4px, transparent 8px);"></div>
+                <div class="absolute left-0 top-0 bottom-0 w-[2px]" style="background: repeating-linear-gradient(0deg, #0071bd/10, #0071bd/10 4px, transparent 4px, transparent 8px);"></div>
                 
                 <div>
                   <h4 class="text-lg font-bold text-[#0071bd] mb-5 flex items-center gap-3 tracking-tight">

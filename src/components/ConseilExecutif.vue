@@ -126,32 +126,43 @@ const closeModal = () => {
     </svg>
 
     <!-- BANNER DE PAGE (HERO) -->
-     <section class="relative pt-40 pb-20 lg:pt-48 lg:pb-24 bg-[#0071bd] border-b border-[#0071bd]/20 overflow-hidden">
+   <section class="relative pt-44 pb-24 lg:pt-52 lg:pb-32 bg-[#38a935] border-b border-[#0071bd]/20 overflow-hidden">
       <div class="absolute inset-0 z-0">
         <img 
           :src="slide1" 
-          alt="Campus universitaire" 
-          class="w-full h-full object-cover grayscale opacity-20 scale-105 mix-blend-overlay"
+          alt="Espace académique REESAO" 
+          class="w-full h-full object-cover grayscale opacity-15 scale-105 contrast-125"
         />
-        <div class="absolute inset-0 bg-gradient-to-t from-[#0071bd] via-[#0071bd]/60 to-transparent"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-[#0071bd]/50 via-transparent to-[#38a935]"></div>
       </div>
+      
+      <div 
+        class="absolute inset-0 z-0 opacity-[0.03] pointer-events-none mix-blend-overlay"
+        style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M30 0l30 30-30 30L0 30zM15 30l15 15 15-15-15-15z\' fill=\'%23ffffff\' fill-opacity=\'1\' fill-rule=\'evenodd\'/%3E%3C/svg%3E');"
+      ></div>
 
       <div class="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-8">
-        <nav class="flex items-center gap-2 text-[10px] lg:text-[11px] font-mono font-bold uppercase tracking-[0.2em] text-white/50 mb-8" aria-label="Breadcrumb">
-          <a href="/" class="hover:text-[#ffe900] transition-colors duration-300">Accueil</a>
-          <i class="ri-arrow-right-s-line text-sm"></i>
-          <span class="text-[#ffe900]">Conseil executif</span>
+        <nav class="flex items-center gap-2 text-[10px] lg:text-[11px] font-mono font-bold uppercase tracking-[0.2em] text-white/40 mb-8" aria-label="Breadcrumb">
+          <router-link to="/" class="hover:text-[#ffe900] transition-colors duration-300">Accueil</router-link>
+          <i class="ri-arrow-right-s-line text-sm opacity-50"></i>
+          <span class="text-[#ffe900]">conseil executif</span>
         </nav>
 
-        <div class="flex flex-col md:flex-row md:items-end justify-between gap-8">
-          <h1 class="text-3xl md:text-5xl lg:text-[56px] text-white font-bold leading-[1.05] tracking-tight max-w-4xl">
-            Conseil <br />
-            <span class="text-[#ffe900] relative inline-block mt-2">
-              Executif du REESAO.
-              <!-- Ligne tissée sous le titre -->
-              <span class="absolute -bottom-3 left-0 w-1/3 h-[4px]" style="background: repeating-linear-gradient(45deg, #ffe900, #ffe900 2px, transparent 2px, transparent 4px);"></span>
-            </span>
-          </h1>
+        <div class="grid lg:grid-cols-12 gap-8 items-end">
+          <div class="lg:col-span-8">
+            <h1 class="text-4xl md:text-5xl lg:text-[64px] text-white font-black leading-[1.05] tracking-tight">
+              Le Conseil<br />
+              <span class="text-[#ffe900] relative inline-block mt-2">
+                Executif
+                <span class="absolute -bottom-3 left-0 w-1/3 h-[4px]" style="background: repeating-linear-gradient(45deg, #38a935, #38a935 4px, transparent 4px, transparent 8px);"></span>
+              </span>
+            </h1>
+          </div>
+          <div class="lg:col-span-4 lg:pb-2">
+            <p class="text-white/60 font-light text-sm lg:text-base leading-relaxed pl-6 border-l-2 border-[#38a935]">
+              Le portail centralisé des publications, des réformes structurelles et des annonces officielles des universités membres.
+            </p>
+          </div>
         </div>
       </div>
     </section>
@@ -164,7 +175,7 @@ const closeModal = () => {
           <span class="w-2 h-2 bg-[#38a935] rotate-45 block"></span>
           <h2 class="text-[10px] font-bold uppercase tracking-[0.2em] text-[#0071bd]">L'Équipe Dirigeante</h2>
         </div>
-        <h3 class="text-2xl md:text-3xl font-black text-[#001a2e] leading-tight uppercase">
+        <h3 class="text-2xl md:text-3xl font-black text-[#0071bd] leading-tight uppercase">
           Le Bureau Exécutif
         </h3>
       </header>
@@ -182,17 +193,17 @@ const closeModal = () => {
             <rect width="100%" height="100%" :fill="getThemeAttrs(membre.colorTheme).pattern" />
           </svg>
           
-          <div class="relative bg-white border border-[#001a2e]/10 z-10 w-full flex flex-col flex-grow transition-transform duration-300 group-hover:-translate-x-1 group-hover:-translate-y-1">
+          <div class="relative bg-white border border-[#0071bd]/10 z-10 w-full flex flex-col flex-grow transition-transform duration-300 group-hover:-translate-x-1 group-hover:-translate-y-1">
             
             <!-- Photo -->
-            <div class="w-full aspect-square overflow-hidden relative border-b border-[#001a2e]/10">
+            <div class="w-full aspect-square overflow-hidden relative border-b border-[#0071bd]/10">
               <img 
                 :src="membre.image" 
                 :alt="`Photo de ${membre.nom}`" 
                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 filter grayscale-[20%] group-hover:grayscale-0"
                 loading="lazy"
               />
-              <div class="absolute inset-0 bg-[#001a2e]/10 group-hover:bg-transparent transition-colors duration-500"></div>
+              <div class="absolute inset-0 bg-[#0071bd]/10 group-hover:bg-transparent transition-colors duration-500"></div>
             </div>
 
             <!-- Contenu Carte -->
@@ -204,24 +215,24 @@ const closeModal = () => {
                 >
                   {{ membre.fonction }}
                 </span>
-                <h3 class="text-lg font-black text-[#001a2e] leading-tight mb-4">
+                <h3 class="text-lg font-black text-[#0071bd] leading-tight mb-4">
                   {{ membre.nom }}
                 </h3>
               </div>
 
               <!-- Actions (LinkedIn & Bouton) -->
-              <div class="mt-6 flex items-center justify-between border-t border-[#001a2e]/10 pt-5">
+              <div class="mt-6 flex items-center justify-between border-t border-[#0071bd]/10 pt-5">
                 <a 
                   v-if="membre.linkedin" 
                   :href="membre.linkedin" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  class="text-[#001a2e]/30 hover:text-[#0071bd] transition-colors duration-300"
+                  class="text-[#0071bd]/30 hover:text-[#0071bd] transition-colors duration-300"
                   aria-label="Profil LinkedIn"
                 >
                   <i class="ri-linkedin-box-fill text-2xl"></i>
                 </a>
-                <span v-else class="text-[#001a2e]/10"><i class="ri-linkedin-box-fill text-2xl"></i></span>
+                <span v-else class="text-[#0071bd]/10"><i class="ri-linkedin-box-fill text-2xl"></i></span>
 
                 <!-- Bouton harmonisé CTA -->
                 <button 
@@ -229,7 +240,7 @@ const closeModal = () => {
                   class="relative group/btn inline-block focus:outline-none"
                 >
                   <div class="absolute inset-0 translate-x-1 translate-y-1 transition-transform duration-300 group-hover/btn:translate-x-1.5 group-hover/btn:translate-y-1.5" :class="getThemeAttrs(membre.colorTheme).bg"></div>
-                  <div class="relative bg-white border text-[#001a2e] px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider flex items-center gap-1.5 transition-colors group-hover/btn:bg-[#001a2e] group-hover/btn:text-white" :class="getThemeAttrs(membre.colorTheme).border">
+                  <div class="relative bg-white border text-[#0071bd] px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider flex items-center gap-1.5 transition-colors group-hover/btn:bg-[#0071bd] group-hover/btn:text-white" :class="getThemeAttrs(membre.colorTheme).border">
                     Bio <i class="ri-arrow-right-line"></i>
                   </div>
                 </button>
@@ -252,7 +263,7 @@ const closeModal = () => {
       >
         <!-- Backdrop Blur -->
         <div 
-          class="absolute inset-0 bg-[#001a2e]/80 backdrop-blur-sm transition-opacity" 
+          class="absolute inset-0 bg-[#0071bd]/80 backdrop-blur-sm transition-opacity" 
           @click="closeModal"
         ></div>
 
@@ -264,24 +275,24 @@ const closeModal = () => {
             <rect width="100%" height="100%" :fill="selectedMembre ? getThemeAttrs(selectedMembre.colorTheme).pattern : ''" />
           </svg>
 
-          <div class="relative z-10 bg-white border border-[#001a2e]/10 flex flex-col md:flex-row w-full h-full overflow-hidden shadow-2xl">
+          <div class="relative z-10 bg-white border border-[#0071bd]/10 flex flex-col md:flex-row w-full h-full overflow-hidden shadow-2xl">
             <!-- Bouton Fermer -->
             <button 
               @click="closeModal"
-              class="absolute top-4 right-4 z-20 w-10 h-10 bg-white border border-[#001a2e]/10 flex items-center justify-center text-[#001a2e]/50 hover:text-white hover:bg-red-500 transition-colors focus:outline-none"
+              class="absolute top-4 right-4 z-20 w-10 h-10 bg-white border border-[#0071bd]/10 flex items-center justify-center text-[#0071bd]/50 hover:text-white hover:bg-red-500 transition-colors focus:outline-none"
               aria-label="Fermer la modale"
             >
               <i class="ri-close-line text-2xl"></i>
             </button>
 
             <!-- Modale - Partie Image -->
-            <div class="w-full md:w-2/5 h-64 md:h-auto md:min-h-[500px] relative border-b md:border-b-0 md:border-r border-[#001a2e]/10">
+            <div class="w-full md:w-2/5 h-64 md:h-auto md:min-h-[500px] relative border-b md:border-b-0 md:border-r border-[#0071bd]/10">
               <img 
                 :src="selectedMembre?.image" 
                 :alt="selectedMembre?.nom" 
                 class="absolute inset-0 w-full h-full object-cover grayscale-[10%]"
               />
-              <div class="absolute inset-0 bg-[#001a2e]/10"></div>
+              <div class="absolute inset-0 bg-[#0071bd]/10"></div>
             </div>
 
             <!-- Modale - Partie Texte -->
@@ -293,25 +304,25 @@ const closeModal = () => {
                     {{ selectedMembre?.fonction }}
                   </span>
                 </div>
-                <h2 class="text-3xl md:text-4xl font-black text-[#001a2e] leading-tight mb-4">
+                <h2 class="text-3xl md:text-4xl font-black text-[#0071bd] leading-tight mb-4">
                   {{ selectedMembre?.nom }}
                 </h2>
                 <div class="w-12 h-1" :class="getThemeAttrs(selectedMembre?.colorTheme).bg"></div>
               </div>
 
               <!-- Biographie complète -->
-              <div class="prose prose-sm md:prose-base prose-p:font-light prose-p:leading-relaxed text-[#001a2e]/70 flex-grow">
+              <div class="prose prose-sm md:prose-base prose-p:font-light prose-p:leading-relaxed text-[#0071bd]/70 flex-grow">
                 <p class="whitespace-pre-line text-sm md:text-base">
                   {{ selectedMembre?.biographie }}
                 </p>
               </div>
 
-              <div v-if="selectedMembre?.linkedin" class="mt-8 pt-6 border-t border-[#001a2e]/10">
+              <div v-if="selectedMembre?.linkedin" class="mt-8 pt-6 border-t border-[#0071bd]/10">
                 <a 
                   :href="selectedMembre.linkedin" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  class="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-[#0071bd] hover:text-[#001a2e] transition-colors"
+                  class="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-[#0071bd] hover:text-[#0071bd] transition-colors"
                 >
                   <i class="ri-linkedin-box-fill text-xl"></i>
                   Profil LinkedIn

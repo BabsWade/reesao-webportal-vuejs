@@ -98,36 +98,43 @@ onMounted(() => {
       </defs>
     </svg>
 
-    <section class="relative pt-40 pb-20 lg:pt-48 lg:pb-24 bg-[#38a935] border-b border-[#0071bd]/10 overflow-hidden">
+   <section class="relative pt-44 pb-24 lg:pt-52 lg:pb-32 bg-[#38a935] border-b border-[#0071bd]/20 overflow-hidden">
       <div class="absolute inset-0 z-0">
         <img 
           :src="slide1" 
-          alt="Campus universitaire" 
-          class="w-full h-full object-cover grayscale opacity-20 scale-105"
+          alt="Espace académique REESAO" 
+          class="w-full h-full object-cover grayscale opacity-15 scale-105 contrast-125"
         />
-        <div class="absolute inset-0 bg-gradient-to-t from-[#0071bd]/30 via-transparent to-transparent"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-[#0071bd]/50 via-transparent to-[#38a935]"></div>
       </div>
-
+      
       <div 
-        class="absolute inset-0 z-0 opacity-[0.04] pointer-events-none mix-blend-overlay"
-        style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M30 0l30 30-30 30L0 30zM15 30l15 15 15-15-15-15z\' fill=\'%23ffffff\' fill-opacity=\'0.8\' fill-rule=\'evenodd\'/%3E%3C/svg%3E');"
+        class="absolute inset-0 z-0 opacity-[0.03] pointer-events-none mix-blend-overlay"
+        style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M30 0l30 30-30 30L0 30zM15 30l15 15 15-15-15-15z\' fill=\'%23ffffff\' fill-opacity=\'1\' fill-rule=\'evenodd\'/%3E%3C/svg%3E');"
       ></div>
 
       <div class="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-8">
-        <nav class="flex items-center gap-2 text-[10px] lg:text-[11px] font-mono font-bold uppercase tracking-[0.2em] text-white/60 mb-8" aria-label="Breadcrumb">
-          <a href="/" class="hover:text-[#ffe900] transition-colors duration-300">Accueil</a>
-          <span class="w-1.5 h-1.5 bg-[#ffe900] rotate-45 block mx-1"></span>
-          <span class="text-[#ffe900]">Statuts du REESAO</span>
+        <nav class="flex items-center gap-2 text-[10px] lg:text-[11px] font-mono font-bold uppercase tracking-[0.2em] text-white/40 mb-8" aria-label="Breadcrumb">
+          <router-link to="/" class="hover:text-[#ffe900] transition-colors duration-300">Accueil</router-link>
+          <i class="ri-arrow-right-s-line text-sm opacity-50"></i>
+          <span class="text-[#ffe900]">Statuts</span>
         </nav>
 
-        <div class="flex flex-col md:flex-row md:items-end justify-between gap-8">
-          <h1 class="text-3xl md:text-5xl lg:text-[56px] text-white font-bold leading-[1.05] tracking-tight max-w-4xl">
-            Statuts Officiels <br />
-            <span class="text-[#ffe900] relative inline-block mt-2">
-              du REESAO.
-              <span class="absolute -bottom-2 left-0 w-1/3 h-[3px] bg-[#ffe900]"></span>
-            </span>
-          </h1>
+        <div class="grid lg:grid-cols-12 gap-8 items-end">
+          <div class="lg:col-span-8">
+            <h1 class="text-4xl md:text-5xl lg:text-[64px] text-white font-black leading-[1.05] tracking-tight">
+              Statuts <br />
+              <span class="text-[#ffe900] relative inline-block mt-2">
+                du Réseau.
+                <span class="absolute -bottom-3 left-0 w-1/3 h-[4px]" style="background: repeating-linear-gradient(45deg, #38a935, #38a935 4px, transparent 4px, transparent 8px);"></span>
+              </span>
+            </h1>
+          </div>
+          <div class="lg:col-span-4 lg:pb-2">
+            <p class="text-white/60 font-light text-sm lg:text-base leading-relaxed pl-6 border-l-2 border-[#38a935]">
+              Le portail centralisé des publications, des réformes structurelles et des annonces officielles des universités membres.
+            </p>
+          </div>
         </div>
       </div>
     </section>

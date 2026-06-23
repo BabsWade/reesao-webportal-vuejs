@@ -1,5 +1,11 @@
 <script setup>
 import { ref } from 'vue';
+import uemoaLogo from "../assets/Logo_UEMOA.png";
+import camesLogo from "../assets/Cames-Logo.svg.png";
+import cedeaoLogo from "../assets/CEDEAO_Logo.svg.png";
+import aufLogo from "../assets/Logo_AUF.svg.png";
+import univlome from "../assets/univlome-siege.jpeg";
+import univlomeLogo from "../assets/LOGO-COULEUR-TRANSP.png";
 
 const activeIndex = ref(null);
 const isMarqueePaused = ref(false);
@@ -43,17 +49,18 @@ const metrics = [
 const siege = {
   name: "Université de Lomé",
   country: "Togo",
-  description: "Institution fondatrice (2005) et hébergeur officiel des instances dirigeantes du réseau.",
-  logo: "https://placehold.co/120x120/ffffff/0071bd?text=UL",
+  image: univlome,
+  description: "Institution fondatrice (2005) et hébergeur officiel des instances dirigeantes du réseau. C'est ici que se coordonnent nos actions communes.",
+  logo: univlomeLogo,
   url: "https://univ-lome.tg"
 };
 
-// Liste des partenaires (Le siège a été retiré d'ici)
+// Liste des partenaires
 const partners = [
-  { name: "CAMES", url: "https://www.lecames.org", logo: "https://placehold.co/200x80/ffffff/0071bd?text=CAMES" },
-  { name: "UEMOA", url: "https://www.uemoa.int", logo: "https://placehold.co/200x80/ffffff/38a935?text=UEMOA" },
-  { name: "AUF", url: "https://www.auf.org", logo: "https://placehold.co/200x80/ffffff/ffe900?text=AUF" },
-  { name: "CEDEAO", url: "https://ecowas.int", logo: "https://placehold.co/200x80/ffffff/0071bd?text=CEDEAO" }
+  { name: "CAMES", url: "https://www.lecames.org", logo: "https://placehold.co/200x80/ffffff/0071bd?text=CAMES", Image: camesLogo },
+  { name: "UEMOA", url: "https://www.uemoa.int", logo: "https://placehold.co/200x80/ffffff/38a935?text=UEMOA", Image: uemoaLogo },
+  { name: "AUF", url: "https://www.auf.org", logo: "https://placehold.co/200x80/ffffff/ffe900?text=AUF", Image: aufLogo },
+  { name: "CEDEAO", url: "https://ecowas.int", logo: "https://placehold.co/200x80/ffffff/0071bd?text=CEDEAO", Image: cedeaoLogo }
 ];
 
 const toggleMarquee = (state) => {
@@ -62,13 +69,15 @@ const toggleMarquee = (state) => {
 </script>
 
 <template>
-  <section class="relative bg-white font-sans overflow-hidden border-y border-[#0071bd]/10 py-12 lg:py-16" id="stats" aria-label="Bandeau Indicateurs et Partenaires">
+  <section class="relative bg-white font-sans overflow-hidden border-y border-[#0071bd]/10 py-12 lg:py-20" id="stats" aria-label="Bandeau Indicateurs et Partenaires">
     
+    <!-- Fond Filigrane -->
     <div 
       class="absolute inset-0 z-0 opacity-[0.02] pointer-events-none mix-blend-multiply"
       style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M30 0l30 30-30 30L0 30zM15 30l15 15 15-15-15-15z\' fill=\'%230071bd\' fill-opacity=\'0.8\' fill-rule=\'evenodd\'/%3E%3C/svg%3E');"
     ></div>
 
+    <!-- Définition des Textures Africaines -->
     <svg class="absolute w-0 h-0 pointer-events-none" xmlns="http://www.w3.org/2000/svg">
       <defs>
         <pattern id="texture-african-blue" width="20" height="20" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
@@ -91,7 +100,11 @@ const toggleMarquee = (state) => {
 
     <div class="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-8">
       
+      <!-- ====================== -->
+      <!-- 1. BLOC DES CHIFFRES -->
+      <!-- ====================== -->
       <div class="grid grid-cols-1 xl:grid-cols-12 gap-8 lg:gap-10 items-center">
+        <!-- Titre -->
         <div class="xl:col-span-3 flex items-start gap-4 border-b xl:border-b-0 xl:border-r border-[#0071bd]/10 pb-6 xl:pb-0 pr-4 shrink-0">
           <div class="hidden sm:flex flex-col items-center gap-1.5 mt-1">
             <span class="w-2.5 h-2.5 bg-[#ffe900] rotate-45 block"></span>
@@ -107,6 +120,7 @@ const toggleMarquee = (state) => {
           </div>
         </div>
 
+        <!-- Cartes -->
         <div class="xl:col-span-9 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
           <article 
             v-for="(metric, index) in metrics" 
@@ -143,109 +157,179 @@ const toggleMarquee = (state) => {
         </div>
       </div>
 
-      <div class="my-12 border-t border-dashed border-[#0071bd]/10 relative">
+      <!-- Séparateur -->
+      <div class="my-16 border-t border-dashed border-[#0071bd]/10 relative">
         <span class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-3 h-3 bg-[#38a935] rotate-45 block"></span>
       </div>
 
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-        
-        <div class="lg:col-span-4 relative group">
-          <svg class="absolute inset-0 translate-x-2 translate-y-2 transition-transform duration-300 ease-out z-0 w-full h-full">
+      <!-- ========================== -->
+      <!-- 2. BLOC DU SIÈGE RÉGIONAL  -->
+      <!-- ========================== -->
+      <div class="max-w-5xl mx-auto mb-20">
+        <div class="relative group">
+          
+          <!-- Application de la texture africaine en fond -->
+          <svg class="absolute inset-0 translate-x-3 translate-y-3 lg:translate-x-4 lg:translate-y-4 transition-transform duration-300 ease-out z-0 w-full h-full">
             <rect width="100%" height="100%" fill="url(#texture-african-blue)" />
           </svg>
-          <div class="relative bg-white border border-[#0071bd]/20 p-6 flex flex-col sm:flex-row lg:flex-col xl:flex-row items-center gap-6 z-10 group-hover:-translate-x-1 group-hover:-translate-y-1 transition-transform duration-300">
-            <div class="w-20 h-20 shrink-0 bg-[#0071bd]/5 p-2 flex items-center justify-center border border-[#0071bd]/10">
-              <img :src="siege.logo" :alt="'Logo ' + siege.name" class="w-full h-full object-contain" />
-            </div>
-            <div class="text-center sm:text-left lg:text-center xl:text-left">
-              <div class="flex items-center justify-center sm:justify-start lg:justify-center xl:justify-start gap-2 mb-1">
-                <span class="w-1.5 h-1.5 bg-[#ffe900] rotate-45 block"></span>
-                <h3 class="text-[10px] font-bold uppercase tracking-[0.2em] text-[#0071bd]">Siège Régional</h3>
+
+          <!-- Carte Horizontale -->
+          <div class="relative bg-white border border-[#0071bd]/10 flex flex-col md:flex-row z-10 transition-transform duration-300 group-hover:-translate-x-1 group-hover:-translate-y-1">
+            
+            <!-- Gauche: Image de couverture -->
+            <div class="w-full md:w-2/5 relative h-56 md:h-auto overflow-hidden bg-[#001a2e] shrink-0">
+              <div class="absolute inset-0 bg-[#001a2e]/20 z-10 group-hover:bg-[#001a2e]/10 transition-colors duration-500"></div>
+              <img :src="siege.image" :alt="'Vue de ' + siege.name" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
+              <!-- Badge Pays -->
+              <div class="absolute top-4 left-4 z-20 bg-[#ffe900] text-[#001a2e] text-[10px] font-black uppercase tracking-widest px-3 py-1.5 flex items-center gap-1.5 shadow-sm">
+                <span class="w-1.5 h-1.5 bg-[#001a2e] rounded-sm rotate-45 block"></span>
+                {{ siege.country }}
               </div>
-              <h4 class="text-base font-black text-[#001a2e] mb-1">{{ siege.name }}</h4>
-              <p class="text-[11px] text-[#0071bd]/70 leading-relaxed">{{ siege.description }}</p>
-              <a :href="siege.url" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 mt-3 text-[10px] font-bold text-[#38a935] hover:text-[#0071bd] transition-colors uppercase tracking-wider">
-                Visiter le site <i class="ri-arrow-right-line text-sm"></i>
+            </div>
+
+            <!-- Droite: Contenu textuel -->
+            <div class="w-full md:w-3/5 relative p-8 md:p-10 lg:p-12 flex flex-col justify-center">
+              
+              <!-- Logo Superposé à la jointure -->
+              <div class="absolute -top-10 md:top-1/2 md:-translate-y-1/2 left-6 md:-left-12 w-20 h-20 bg-white border border-[#0071bd]/10 z-20 flex items-center justify-center shadow-md group-hover:scale-105 transition-transform duration-300">
+                <img :src="siege.logo" :alt="'Logo ' + siege.name" class="w-full h-full object-contain" />
+              </div>
+
+              <div class="md:ml-8 lg:ml-12">
+                <div class="flex items-center gap-2 mb-3">
+                  <span class="w-1.5 h-1.5 bg-[#38a935] rotate-45 block"></span>
+                  <h3 class="text-[10px] font-bold uppercase tracking-[0.2em] text-[#0071bd]">Siège Régional</h3>
+                </div>
+                
+                <h4 class="text-2xl lg:text-3xl font-black text-[#001a2e] mb-4 leading-tight">{{ siege.name }}</h4>
+                <p class="text-[13px] text-[#0071bd]/75 leading-relaxed mb-8">{{ siege.description }}</p>
+                
+                <!-- Action Link -->
+                <a :href="siege.url" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 group/link">
+                  <span class="w-8 h-8 rounded-full bg-[#0071bd]/5 flex items-center justify-center text-[#0071bd] group-hover/link:bg-[#0071bd] group-hover/link:text-white transition-colors duration-300">
+                    <i class="ri-arrow-right-line text-sm"></i>
+                  </span>
+                  <span class="text-[11px] font-bold text-[#0071bd] group-hover/link:text-[#38a935] transition-colors uppercase tracking-widest">
+                    Visiter le portail officiel
+                  </span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Barre décorative tricolore en bas -->
+            <div class="absolute bottom-0 left-0 h-1 w-full flex">
+              <div class="h-full bg-[#0071bd] flex-grow"></div>
+              <div class="h-full bg-[#ffe900] w-12 border-l border-white/20"></div>
+              <div class="h-full bg-[#38a935] w-12 border-l border-white/20"></div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- ========================== -->
+      <!-- 3. BLOC DES PARTENAIRES    -->
+      <!-- ========================== -->
+      <div class="w-full border-t border-[#0071bd]/10 pt-10">
+        
+        <!-- En-tête Partenaires -->
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-8">
+          <div>
+            <div class="flex items-center gap-2 mb-2">
+              <span class="w-1.5 h-1.5 bg-[#ffe900] rotate-45 block"></span>
+              <h3 class="text-[10px] font-bold uppercase tracking-[0.2em] text-[#0071bd]">Synergie & Coopération</h3>
+            </div>
+            <h4 class="text-xl font-black text-[#001a2e]">Partenaires Stratégiques</h4>
+          </div>
+          
+          <!-- Contrôles du Marquee -->
+          <div class="flex items-center gap-1 border border-[#0071bd]/20 p-0.5 bg-white shrink-0">
+            <button 
+              @click="toggleMarquee(false)" 
+              class="w-8 h-8 flex items-center justify-center transition-colors focus:outline-none"
+              :class="!isMarqueePaused ? 'bg-[#0071bd] text-white' : 'text-[#0071bd]/50 hover:bg-[#0071bd]/5 hover:text-[#0071bd]'"
+              aria-label="Lecture"
+            >
+              <i class="ri-play-fill text-sm"></i>
+            </button>
+            <button 
+              @click="toggleMarquee(true)" 
+              class="w-8 h-8 flex items-center justify-center transition-colors focus:outline-none"
+              :class="isMarqueePaused ? 'bg-[#38a935] text-white' : 'text-[#0071bd]/50 hover:bg-[#0071bd]/5 hover:text-[#0071bd]'"
+              aria-label="Pause"
+            >
+              <i class="ri-pause-fill text-sm"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Animation Marquee (Pleine largeur) -->
+        <div class="relative w-full overflow-hidden before:absolute before:left-0 before:top-0 before:z-10 before:h-full before:w-20 before:bg-gradient-to-r before:from-white before:to-transparent after:absolute after:right-0 after:top-0 after:z-10 after:h-full after:w-20 after:bg-gradient-to-l after:from-white after:to-transparent">
+          
+          <div 
+            class="marquee-wrapper flex w-max gap-8 py-2"
+            :class="{ 'marquee-paused': isMarqueePaused }"
+          >
+            <!-- Bloc 1 -->
+            <div class="flex gap-8 shrink-0">
+              <a 
+                v-for="(partner, pIdx) in partners" 
+                :key="'p1-' + pIdx"
+                :href="partner.url"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="group relative block w-48 h-24 bg-white border border-[#0071bd]/10 p-5 transition-all hover:border-[#0071bd] focus:outline-none"
+              >
+                <div class="absolute inset-0 bg-[#ffe900]/10 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
+                <img 
+                  :src="partner.Image" 
+                  :alt="'Image ' + partner.name" 
+                  class="w-full h-full object-contain filter grayscale contrast-125 group-hover:grayscale-0 transition-all duration-300"
+                />
+              </a>
+            </div>
+
+            <!-- Bloc 2 (Clone) -->
+            <div class="flex gap-8 shrink-0" aria-hidden="true">
+              <a 
+                v-for="(partner, pIdx) in partners" 
+                :key="'p2-' + pIdx"
+                :href="partner.url"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="group relative block w-48 h-24 bg-white border border-[#0071bd]/10 p-5 transition-all hover:border-[#0071bd] focus:outline-none"
+              >
+                <div class="absolute inset-0 bg-[#ffe900]/10 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
+                <img 
+                  :src="partner.Image" 
+                  :alt="'Image ' + partner.name" 
+                  class="w-full h-full object-contain filter grayscale contrast-125 group-hover:grayscale-0 transition-all duration-300"
+                />
+              </a>
+            </div>
+            
+             <!-- Bloc 3 (Clone supplémentaire pour la grande pleine largeur) -->
+             <div class="flex gap-8 shrink-0" aria-hidden="true">
+              <a 
+                v-for="(partner, pIdx) in partners" 
+                :key="'p3-' + pIdx"
+                :href="partner.url"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="group relative block w-48 h-24 bg-white border border-[#0071bd]/10 p-5 transition-all hover:border-[#0071bd] focus:outline-none"
+              >
+                <div class="absolute inset-0 bg-[#ffe900]/10 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
+                <img 
+                  :src="partner.Image" 
+                  :alt="'Image ' + partner.name" 
+                  class="w-full h-full object-contain filter grayscale contrast-125 group-hover:grayscale-0 transition-all duration-300"
+                />
               </a>
             </div>
           </div>
         </div>
 
-        <div class="lg:col-span-8 flex flex-col gap-6">
-          <div class="flex items-center justify-between border-b border-[#0071bd]/10 pb-3">
-            <div class="flex items-center gap-3">
-              <span class="w-1.5 h-1.5 bg-[#38a935] rotate-45 block"></span>
-              <h3 class="text-[10px] font-bold uppercase tracking-[0.2em] text-[#0071bd]">Partenaires & Alliances Régionales</h3>
-            </div>
-            
-            <div class="flex items-center gap-1 border border-[#0071bd]/20 p-0.5 bg-white">
-              <button 
-                @click="toggleMarquee(false)" 
-                class="w-7 h-7 flex items-center justify-center transition-colors focus:outline-none"
-                :class="!isMarqueePaused ? 'bg-[#0071bd] text-white' : 'text-[#0071bd]/50 hover:bg-[#0071bd]/5 hover:text-[#0071bd]'"
-                aria-label="Lecture"
-              >
-                <i class="ri-play-fill text-sm"></i>
-              </button>
-              <button 
-                @click="toggleMarquee(true)" 
-                class="w-7 h-7 flex items-center justify-center transition-colors focus:outline-none"
-                :class="isMarqueePaused ? 'bg-[#38a935] text-white' : 'text-[#0071bd]/50 hover:bg-[#0071bd]/5 hover:text-[#0071bd]'"
-                aria-label="Pause"
-              >
-                <i class="ri-pause-fill text-sm"></i>
-              </button>
-            </div>
-          </div>
-
-          <div class="relative w-full overflow-hidden before:absolute before:left-0 before:top-0 before:z-10 before:h-full before:w-16 before:bg-gradient-to-r before:from-white before:to-transparent after:absolute after:right-0 after:top-0 after:z-10 after:h-full after:w-16 after:bg-gradient-to-l after:from-white after:to-transparent">
-            
-            <div 
-              class="marquee-wrapper flex w-max gap-8 py-2"
-              :class="{ 'marquee-paused': isMarqueePaused }"
-            >
-              <div class="flex gap-8 shrink-0">
-                <a 
-                  v-for="(partner, pIdx) in partners" 
-                  :key="'p1-' + pIdx"
-                  :href="partner.url"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="group relative block w-40 h-20 bg-white border border-[#0071bd]/10 p-4 transition-all hover:border-[#0071bd] focus:outline-none"
-                  :aria-label="'Visiter le site de ' + partner.name"
-                >
-                  <div class="absolute inset-0 bg-[#ffe900]/10 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
-                  <img 
-                    :src="partner.logo" 
-                    :alt="'Logo ' + partner.name" 
-                    class="w-full h-full object-contain filter grayscale contrast-125 group-hover:grayscale-0 transition-all duration-300"
-                  />
-                </a>
-              </div>
-
-              <div class="flex gap-8 shrink-0" aria-hidden="true">
-                <a 
-                  v-for="(partner, pIdx) in partners" 
-                  :key="'p2-' + pIdx"
-                  :href="partner.url"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="group relative block w-40 h-20 bg-white border border-[#0071bd]/10 p-4 transition-all hover:border-[#0071bd] focus:outline-none"
-                >
-                  <div class="absolute inset-0 bg-[#ffe900]/10 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
-                  <img 
-                    :src="partner.logo" 
-                    :alt="'Logo ' + partner.name" 
-                    class="w-full h-full object-contain filter grayscale contrast-125 group-hover:grayscale-0 transition-all duration-300"
-                  />
-                </a>
-              </div>
-            </div>
-          </div>
-
-        </div>
       </div>
-
     </div>
   </section>
 </template>
@@ -253,11 +337,11 @@ const toggleMarquee = (state) => {
 <style scoped>
 @keyframes marquee {
   0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  100% { transform: translateX(-33.33%); } /* Ajusté car on a 3 blocs pour éviter les blancs */
 }
 
 .marquee-wrapper {
-  animation: marquee 25s linear infinite;
+  animation: marquee 20s linear infinite;
 }
 
 /* Interruption de l'animation via les boutons ou au survol */
