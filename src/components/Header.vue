@@ -36,18 +36,18 @@
             <i class="ri-mail-line text-base text-[#ffe900]"></i> 
             contact@reesao.org
           </a>
-          <a href="tel:+221000000000" class="group flex items-center gap-2 hover:text-[#ffe900] transition-colors duration-300">
+          <a href="tel:+221772530475" class="group flex items-center gap-2 hover:text-[#ffe900] transition-colors duration-300">
             <i class="ri-phone-line text-base text-[#ffe900]"></i> 
-            +221 00 000 00 00
+            +221 77 253 04 75
           </a>
         </div>
 
         <div class="flex items-center gap-6">
           <div class="flex items-center gap-4 border-r border-white/20 pr-6">
-            <a href="#" aria-label="LinkedIn" class="hover:text-[#ffe900] transition-colors duration-300 text-sm"><i class="ri-linkedin-fill"></i></a>
-            <a href="#" aria-label="Twitter" class="hover:text-[#ffe900] transition-colors duration-300 text-sm"><i class="ri-twitter-x-line"></i></a>
-            <a href="#" aria-label="Facebook" class="hover:text-[#ffe900] transition-colors duration-300 text-sm"><i class="ri-facebook-fill"></i></a>
-            <a href="#" aria-label="Youtube" class="hover:text-[#ffe900] transition-colors duration-300 text-sm"><i class="ri-youtube-fill"></i></a>
+            <a href="https://www.linkedin.com/company/reesao/%20" aria-label="LinkedIn" class="hover:text-[#ffe900] transition-colors duration-300 text-sm"><i class="ri-linkedin-fill"></i></a>
+            <a href="https://x.com/REESAO_org" aria-label="Twitter" class="hover:text-[#ffe900] transition-colors duration-300 text-sm"><i class="ri-twitter-x-line"></i></a>
+            <a href="https://www.facebook.com/reesao.org" aria-label="Facebook" class="hover:text-[#ffe900] transition-colors duration-300 text-sm"><i class="ri-facebook-fill"></i></a>
+            <a href="https://www.youtube.com/@REESAO_org" aria-label="Youtube" class="hover:text-[#ffe900] transition-colors duration-300 text-sm"><i class="ri-youtube-fill"></i></a>
           </div>
           
           <div class="flex items-center gap-3">
@@ -247,8 +247,10 @@
 
         <div class="relative z-10 mt-auto pt-10 flex flex-col gap-4 border-t border-white/5 text-white/40">
           <div class="flex items-center gap-5 text-xl">
-            <a href="#" class="hover:text-[#ffe900] transition-colors"><i class="ri-linkedin-fill"></i></a>
-            <a href="#" class="hover:text-[#ffe900] transition-colors"><i class="ri-twitter-x-line"></i></a>
+            <a href="https://www.linkedin.com/company/reesao/%20" class="hover:text-[#ffe900] transition-colors"><i class="ri-linkedin-fill"></i></a>
+            <a href="https://x.com/REESAO_org" class="hover:text-[#ffe900] transition-colors"><i class="ri-twitter-x-line"></i></a>
+            <a href="https://www.facebook.com/reesao.org" class="hover:text-[#ffe900] transition-colors"><i class="ri-facebook-fill"></i></a>
+            <a href="https://www.youtube.com/@REESAO_org" class="hover:text-[#ffe900] transition-colors"><i class="ri-youtube-fill"></i></a>
           </div>
           <a href="mailto:contact@reesao.org" class="text-xs hover:text-[#ffe900] transition-colors font-light tracking-wider">
             contact@reesao.org

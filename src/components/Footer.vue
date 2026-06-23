@@ -102,7 +102,7 @@
             </li>
             <li class="flex items-center gap-3.5 group cursor-default">
               <i class="ri-phone-line text-[#ffe900] opacity-70 group-hover:opacity-100 transition-opacity text-base shrink-0"></i>
-              <span class="group-hover:text-white transition-colors duration-300 font-medium tracking-wide">+221 33 825 05 05</span>
+              <span class="group-hover:text-white transition-colors duration-300 font-medium tracking-wide">+221 77 253 04 75</span>
             </li>
           </ul>
         </div>
@@ -197,10 +197,10 @@ const quickLinks = [
 ]
 
 const socialLinks = [
-  { icon: 'ri-linkedin-fill', href: '#', label: 'LinkedIn' },
-  { icon: 'ri-twitter-x-fill', href: '#', label: 'X (Twitter)' },
-  { icon: 'ri-facebook-fill', href: '#', label: 'Facebook' },
-  { icon: 'ri-youtube-fill', href: '#', label: 'YouTube' },
+  { icon: 'ri-linkedin-fill', href: 'https://www.linkedin.com/company/reesao/%20', label: 'LinkedIn' },
+  { icon: 'ri-twitter-x-fill', href: 'https://x.com/REESAO_org', label: 'X (Twitter)' },
+  { icon: 'ri-facebook-fill', href: 'https://www.facebook.com/reesao.org', label: 'Facebook' },
+  { icon: 'ri-youtube-fill', href: 'https://www.youtube.com/@REESAO_org', label: 'YouTube' },
 ]
 </script>
 

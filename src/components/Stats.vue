@@ -177,12 +177,12 @@ const toggleMarquee = (state) => {
           <div class="relative bg-white border border-[#0071bd]/10 flex flex-col md:flex-row z-10 transition-transform duration-300 group-hover:-translate-x-1 group-hover:-translate-y-1">
             
             <!-- Gauche: Image de couverture -->
-            <div class="w-full md:w-2/5 relative h-56 md:h-auto overflow-hidden bg-[#001a2e] shrink-0">
-              <div class="absolute inset-0 bg-[#001a2e]/20 z-10 group-hover:bg-[#001a2e]/10 transition-colors duration-500"></div>
+            <div class="w-full md:w-2/5 relative h-56 md:h-auto overflow-hidden bg-[#38a935] shrink-0">
+              <div class="absolute inset-0 bg-[#38a935]/20 z-10 group-hover:bg-[#38a935]/10 transition-colors duration-500"></div>
               <img :src="siege.image" :alt="'Vue de ' + siege.name" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
               <!-- Badge Pays -->
-              <div class="absolute top-4 left-4 z-20 bg-[#ffe900] text-[#001a2e] text-[10px] font-black uppercase tracking-widest px-3 py-1.5 flex items-center gap-1.5 shadow-sm">
-                <span class="w-1.5 h-1.5 bg-[#001a2e] rounded-sm rotate-45 block"></span>
+              <div class="absolute top-4 left-4 z-20 bg-[#ffe900] text-[#38a935] text-[10px] font-black uppercase tracking-widest px-3 py-1.5 flex items-center gap-1.5 shadow-sm">
+                <span class="w-1.5 h-1.5 bg-[#38a935] rounded-sm rotate-45 block"></span>
                 {{ siege.country }}
               </div>
             </div>
@@ -196,12 +196,12 @@ const toggleMarquee = (state) => {
               </div>
 
               <div class="md:ml-8 lg:ml-12">
-                <div class="flex items-center gap-2 mb-3">
+                <div class="flex items-center gap-2 mb-3 mt-10">
                   <span class="w-1.5 h-1.5 bg-[#38a935] rotate-45 block"></span>
                   <h3 class="text-[10px] font-bold uppercase tracking-[0.2em] text-[#0071bd]">Siège Régional</h3>
                 </div>
                 
-                <h4 class="text-2xl lg:text-3xl font-black text-[#001a2e] mb-4 leading-tight">{{ siege.name }}</h4>
+                <h4 class="text-2xl lg:text-3xl font-black text-[#38a935] mb-4 leading-tight">{{ siege.name }}</h4>
                 <p class="text-[13px] text-[#0071bd]/75 leading-relaxed mb-8">{{ siege.description }}</p>
                 
                 <!-- Action Link -->
@@ -216,12 +216,7 @@ const toggleMarquee = (state) => {
               </div>
             </div>
 
-            <!-- Barre décorative tricolore en bas -->
-            <div class="absolute bottom-0 left-0 h-1 w-full flex">
-              <div class="h-full bg-[#0071bd] flex-grow"></div>
-              <div class="h-full bg-[#ffe900] w-12 border-l border-white/20"></div>
-              <div class="h-full bg-[#38a935] w-12 border-l border-white/20"></div>
-            </div>
+            
 
           </div>
         </div>
@@ -239,7 +234,7 @@ const toggleMarquee = (state) => {
               <span class="w-1.5 h-1.5 bg-[#ffe900] rotate-45 block"></span>
               <h3 class="text-[10px] font-bold uppercase tracking-[0.2em] text-[#0071bd]">Synergie & Coopération</h3>
             </div>
-            <h4 class="text-xl font-black text-[#001a2e]">Partenaires Stratégiques</h4>
+            <h4 class="text-xl font-black text-[#38a935]">Partenaires Stratégiques</h4>
           </div>
           
           <!-- Contrôles du Marquee -->
@@ -284,7 +279,7 @@ const toggleMarquee = (state) => {
                 <img 
                   :src="partner.Image" 
                   :alt="'Image ' + partner.name" 
-                  class="w-full h-full object-contain filter grayscale contrast-125 group-hover:grayscale-0 transition-all duration-300"
+                  class="w-full h-full object-contain filter contrast-125 group-hover:grayscale-0 transition-all duration-300"
                 />
               </a>
             </div>
@@ -303,7 +298,7 @@ const toggleMarquee = (state) => {
                 <img 
                   :src="partner.Image" 
                   :alt="'Image ' + partner.name" 
-                  class="w-full h-full object-contain filter grayscale contrast-125 group-hover:grayscale-0 transition-all duration-300"
+                  class="w-full h-full object-contain filter contrast-125 group-hover:grayscale-0 transition-all duration-300"
                 />
               </a>
             </div>
@@ -322,7 +317,7 @@ const toggleMarquee = (state) => {
                 <img 
                   :src="partner.Image" 
                   :alt="'Image ' + partner.name" 
-                  class="w-full h-full object-contain filter grayscale contrast-125 group-hover:grayscale-0 transition-all duration-300"
+                  class="w-full h-full object-contain filter contrast-125 group-hover:grayscale-0 transition-all duration-300"
                 />
               </a>
             </div>
