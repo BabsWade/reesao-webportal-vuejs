@@ -126,34 +126,30 @@ const closeModal = () => {
     </svg>
 
     <!-- BANNER DE PAGE (HERO) -->
-    <section class="relative pt-40 pb-20 lg:pt-48 lg:pb-24 bg-[#001a2e] border-b border-[#0071bd]/20 overflow-hidden">
-      <!-- Image de fond avec overlay -->
+     <section class="relative pt-40 pb-20 lg:pt-48 lg:pb-24 bg-[#0071bd] border-b border-[#0071bd]/20 overflow-hidden">
       <div class="absolute inset-0 z-0">
         <img 
           :src="slide1" 
           alt="Campus universitaire" 
-          class="w-full h-full object-cover grayscale opacity-20 scale-105"
+          class="w-full h-full object-cover grayscale opacity-20 scale-105 mix-blend-overlay"
         />
-        <div class="absolute inset-0 bg-gradient-to-t from-[#001a2e] via-[#001a2e]/60 to-transparent"></div>
-        <div class="absolute inset-0 bg-[#0071bd] mix-blend-multiply opacity-50"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-[#0071bd] via-[#0071bd]/60 to-transparent"></div>
       </div>
 
-      <!-- Contenu du Banner -->
       <div class="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-8">
-        <!-- Signalétique -->
-        <div class="flex gap-1 mb-8">
-          <div class="w-8 h-1.5 bg-[#0071bd]"></div>
-          <div class="w-8 h-1.5 bg-[#38a935]"></div>
-          <div class="w-8 h-1.5 bg-[#ffe900]"></div>
-        </div>
+        <nav class="flex items-center gap-2 text-[10px] lg:text-[11px] font-mono font-bold uppercase tracking-[0.2em] text-white/50 mb-8" aria-label="Breadcrumb">
+          <a href="/" class="hover:text-[#ffe900] transition-colors duration-300">Accueil</a>
+          <i class="ri-arrow-right-s-line text-sm"></i>
+          <span class="text-[#ffe900]">Conseil executif</span>
+        </nav>
 
-        <!-- Titre de la page -->
         <div class="flex flex-col md:flex-row md:items-end justify-between gap-8">
-          <h1 class="text-4xl md:text-5xl lg:text-6xl text-white font-black leading-[1.05] tracking-tighter uppercase max-w-4xl">
-            Membres du <br />
+          <h1 class="text-3xl md:text-5xl lg:text-[56px] text-white font-bold leading-[1.05] tracking-tight max-w-4xl">
+            Conseil <br />
             <span class="text-[#ffe900] relative inline-block mt-2">
-              Comité Exécutif
-              <span class="absolute -bottom-2 left-0 w-1/3 h-[3px] bg-[#ffe900]"></span>
+              Executif du REESAO.
+              <!-- Ligne tissée sous le titre -->
+              <span class="absolute -bottom-3 left-0 w-1/3 h-[4px]" style="background: repeating-linear-gradient(45deg, #ffe900, #ffe900 2px, transparent 2px, transparent 4px);"></span>
             </span>
           </h1>
         </div>
