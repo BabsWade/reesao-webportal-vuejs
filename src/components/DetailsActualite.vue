@@ -199,7 +199,7 @@ const shareArticle = (platform) => {
               <svg class="absolute inset-0 translate-x-3 translate-y-3 md:translate-x-4 md:translate-y-4 transition-transform duration-300 z-0 w-full h-full">
                 <rect width="100%" height="100%" fill="url(#texture-details-green)" />
               </svg>
-              <div class="relative bg-[#0071bd] border border-[#0071bd]/10 z-10 w-full aspect-video overflow-hidden group-hover:-translate-x-1 group-hover:-translate-y-1 transition-transform duration-300">
+              <div class="relative bg-[#0071bd]/0 border border-[#0071bd]/10 z-10 w-full aspect-video overflow-hidden group-hover:-translate-x-1 group-hover:-translate-y-1 transition-transform duration-300">
                 <img 
                   :src="article.imageMiseEnAvant" 
                   :alt="article.titre" 

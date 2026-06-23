@@ -1,43 +1,80 @@
 <script setup>
 import { ref } from 'vue'
 import slide1 from '../assets/hero.jpg' // Image de fond pour le banner
-import presidentImg from "../assets/president.jpg";
+import presidentImg from "../assets/PR.jpg";
+import vp1Img from "../assets/VP1.jpg";
+import vp2Img from "../assets/VP2.jpg";
+import sgImg from "../assets/SG.jpg";
+import sgaImg from "../assets/SGA.jpg";
+import trImg from "../assets/TR.jpg";
 
 // Données d'exemple pour le comité exécutif
 const membres = ref([
   {
     id: 1,
-    nom: 'Pr Issa Abdou MOUMOULA',
+    nom: 'Professeur Mamadou Babacar NDIAYE',
     fonction: 'Président du REESAO',
     image: presidentImg,
     linkedin: 'https://linkedin.com',
-    biographie: `Le Professeur Issa Abdou MOUMOULA est le Président actuel du REESAO. Éminent chercheur et administrateur académique, il a consacré plus de 20 ans au développement de l'enseignement supérieur en Afrique de l'Ouest. \n\nSous sa direction, de nombreuses réformes ont été initiées pour harmoniser le système LMD au sein de l'espace ouest-africain. Il est également l'auteur de plusieurs publications scientifiques de renommée internationale sur l'innovation éducative et la gestion universitaire.`
+    biographie: `Le Professeur Issa Abdou MOUMOULA est le Président actuel du REESAO. Éminent chercheur et administrateur académique, il a consacré plus de 20 ans au développement de l'enseignement supérieur en Afrique de l'Ouest. \n\nSous sa direction, de nombreuses réformes ont été initiées pour harmoniser le système LMD au sein de l'espace ouest-africain. Il est également l'auteur de plusieurs publications scientifiques de renommée internationale sur l'innovation éducative et la gestion universitaire.`,
+    colorTheme: 'blue'
   },
   {
     id: 2,
-    nom: 'Dr. Aminata DIALLO',
-    fonction: 'Vice-Présidente',
-    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=600&h=600',
+    nom: 'Professeur Bertrand SOGBOSSI BOCCO',
+    fonction: 'Vice-Président',
+    image: vp1Img,
     linkedin: 'https://linkedin.com',
-    biographie: `Docteure en Sciences de l'Éducation, Aminata Diallo supervise les commissions spécialisées du réseau. Elle a auparavant dirigé l'Institut de Recherche en Pédagogie Avancée.\n\nElle s'assure de l'alignement des programmes académiques avec les standards internationaux, avec un focus particulier sur l'intégration des technologies de l'information et de la communication (TIC) dans l'apprentissage.`
+    biographie: `Docteure en Sciences de l'Éducation, Aminata Diallo supervise les commissions spécialisées du réseau. Elle a auparavant dirigé l'Institut de Recherche en Pédagogie Avancée.\n\nElle s'assure de l'alignement des programmes académiques avec les standards internationaux, avec un focus particulier sur l'intégration des technologies de l'information et de la communication (TIC) dans l'apprentissage.`,
+    colorTheme: 'green'
   },
   {
     id: 3,
-    nom: 'Prof. Koffi KOUASSI',
-    fonction: 'Secrétaire Général',
-    image: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=600&h=600',
+    nom: 'Professeur Paul TRAORE',
+    fonction: '2ᵉ Vice-Président',
+    image: vp2Img,
     linkedin: null, // Test sans LinkedIn
-    biographie: `Professeur titulaire en Économie, Koffi Kouassi coordonne l'ensemble des activités administratives et le suivi quotidien des dossiers du REESAO. \n\nIl est la cheville ouvrière de l'organisation matérielle des rencontres annuelles et assure la liaison constante entre les différents établissements membres et les partenaires internationaux.`
+    biographie: `Professeur titulaire en Économie, Koffi Kouassi coordonne l'ensemble des activités administratives et le suivi quotidien des dossiers du REESAO. \n\nIl est la cheville ouvrière de l'organisation matérielle des rencontres annuelles et assure la liaison constante entre les différents établissements membres et les partenaires internationaux.`,
+    colorTheme: 'yellow'
   },
   {
     id: 4,
-    nom: 'Mme. Fatou SOW',
-    fonction: 'Trésorière Générale',
-    image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=600&h=600',
+    nom: 'Professeur Cheikh SARR',
+    fonction: 'Secrétaire Général (SG)',
+    image: sgImg,
     linkedin: 'https://linkedin.com',
-    biographie: `Experte-comptable diplômée avec une spécialisation en gestion des institutions publiques, Fatou Sow gère les ressources financières du REESAO depuis 2021.\n\nElle veille à la transparence financière, à la collecte des cotisations et à la gestion des subventions allouées aux projets de recherche inter-universitaires du réseau.`
+    biographie: `Experte-comptable diplômée avec une spécialisation en gestion des institutions publiques, Fatou Sow gère les ressources financières du REESAO depuis 2021.\n\nElle veille à la transparence financière, à la collecte des cotisations et à la gestion des subventions allouées aux projets de recherche inter-universitaires du réseau.`,
+    colorTheme: 'blue'
+  },
+  {
+    id: 5,
+    nom: 'Professeur Aklesso Yao G. EGBENDEWE',
+    fonction: 'Secrétaire Général Adjoint (SGA)',
+    image: sgaImg,
+    linkedin: 'https://linkedin.com',
+    biographie: `Experte-comptable diplômée avec une spécialisation en gestion des institutions publiques, Fatou Sow gère les ressources financières du REESAO depuis 2021.\n\nElle veille à la transparence financière, à la collecte des cotisations et à la gestion des subventions allouées aux projets de recherche inter-universitaires du réseau.`,
+    colorTheme: 'green'
+  },
+  {
+    id: 6,
+    nom: 'MC Agr Tsotso KOUEVI',
+    fonction: 'Trésorière générale',
+    image: trImg,
+    linkedin: 'https://linkedin.com',
+    biographie: `Experte-comptable diplômée avec une spécialisation en gestion des institutions publiques, Fatou Sow gère les ressources financières du REESAO depuis 2021.\n\nElle veille à la transparence financière, à la collecte des cotisations et à la gestion des subventions allouées aux projets de recherche inter-universitaires du réseau.`,
+    colorTheme: 'yellow'
   }
 ])
+
+// Utilitaires de thèmes pour les motifs et couleurs
+const getThemeAttrs = (theme) => {
+  const themes = {
+    blue: { pattern: 'url(#texture-african-blue)', text: 'text-[#0071bd]', bg: 'bg-[#0071bd]', border: 'border-[#0071bd]' },
+    green: { pattern: 'url(#texture-african-green)', text: 'text-[#38a935]', bg: 'bg-[#38a935]', border: 'border-[#38a935]' },
+    yellow: { pattern: 'url(#texture-african-yellow)', text: 'text-[#ffe900]', bg: 'bg-[#ffe900]', border: 'border-[#ffe900]' }
+  }
+  return themes[theme] || themes.blue
+}
 
 // Gestion de l'état de la modale
 const isModalOpen = ref(false)
@@ -46,7 +83,6 @@ const selectedMembre = ref(null)
 const openModal = (membre) => {
   selectedMembre.value = membre
   isModalOpen.value = true
-  // Empêcher le scroll du body quand la modale est ouverte
   document.body.style.overflow = 'hidden'
 }
 
@@ -54,17 +90,43 @@ const closeModal = () => {
   isModalOpen.value = false
   setTimeout(() => {
     selectedMembre.value = null
-  }, 300) // Délai pour l'animation de fermeture
-  // Réactiver le scroll du body
+  }, 300) 
   document.body.style.overflow = 'auto'
 }
 </script>
 
 <template>
-  <main class="w-full bg-slate-50 font-sans selection:bg-[#ffe900] selection:text-[#0071bd]">
+  <main class="w-full bg-white font-sans selection:bg-[#ffe900] selection:text-[#0071bd] min-h-screen relative overflow-hidden">
     
+    <!-- Pattern Géométrique de fond global -->
+    <div 
+      class="absolute inset-0 z-0 opacity-[0.02] pointer-events-none mix-blend-multiply"
+      style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M30 0l30 30-30 30L0 30zM15 30l15 15 15-15-15-15z\' fill=\'%230071bd\' fill-opacity=\'1\' fill-rule=\'evenodd\'/%3E%3C/svg%3E');"
+    ></div>
+
+    <!-- Textures SVG globales -->
+    <svg class="absolute w-0 h-0 pointer-events-none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <pattern id="texture-african-blue" width="20" height="20" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+          <rect width="20" height="20" fill="#0071bd" />
+          <path d="M10 0 L20 10 L10 20 L0 10 Z" fill="none" stroke="#0071bd" stroke-width="2" opacity="0.3" />
+          <rect x="8" y="8" width="4" height="4" fill="#ffe900" opacity="0.8"/>
+        </pattern>
+        <pattern id="texture-african-green" width="20" height="20" patternUnits="userSpaceOnUse">
+          <rect width="20" height="20" fill="#38a935" />
+          <path d="M0 5 L10 15 L20 5" fill="none" stroke="#0071bd" stroke-width="2" opacity="0.4" />
+          <path d="M0 10 L10 20 L20 10" fill="none" stroke="#ffe900" stroke-width="1.5" opacity="0.6" />
+        </pattern>
+        <pattern id="texture-african-yellow" width="16" height="16" patternUnits="userSpaceOnUse">
+          <rect width="16" height="16" fill="#ffe900" />
+          <path d="M0 0h8v8H0zM8 8h8v8H8z" fill="#0071bd" opacity="0.1" />
+          <path d="M0 8h16M8 0v16" fill="none" stroke="#38a935" stroke-width="1" opacity="0.4" />
+        </pattern>
+      </defs>
+    </svg>
+
     <!-- BANNER DE PAGE (HERO) -->
-    <section class="relative pt-40 pb-20 lg:pt-48 lg:pb-24 bg-[#0071bd] border-b border-white/10 overflow-hidden">
+    <section class="relative pt-40 pb-20 lg:pt-48 lg:pb-24 bg-[#001a2e] border-b border-[#0071bd]/20 overflow-hidden">
       <!-- Image de fond avec overlay -->
       <div class="absolute inset-0 z-0">
         <img 
@@ -72,36 +134,25 @@ const closeModal = () => {
           alt="Campus universitaire" 
           class="w-full h-full object-cover grayscale opacity-20 scale-105"
         />
-        <div class="absolute inset-0 bg-gradient-to-t from-[#0071bd]/0 via-[#0071bd]/10 to-[#0071bd]/0"></div>
-      </div>
-
-      <!-- Trame géométrique technique -->
-      <div class="absolute inset-0 z-0 opacity-[0.03] pointer-events-none">
-        <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <pattern id="grid-pattern" width="40" height="40" patternUnits="userSpaceOnUse">
-              <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#ffffff" stroke-width="1"/>
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#grid-pattern)" />
-        </svg>
+        <div class="absolute inset-0 bg-gradient-to-t from-[#001a2e] via-[#001a2e]/60 to-transparent"></div>
+        <div class="absolute inset-0 bg-[#0071bd] mix-blend-multiply opacity-50"></div>
       </div>
 
       <!-- Contenu du Banner -->
       <div class="relative z-10 max-w-[1400px] mx-auto px-6 lg:px-8">
-        <!-- Fil d'Ariane -->
-        <nav class="flex items-center gap-2 text-[10px] lg:text-[11px] font-mono font-bold uppercase tracking-[0.2em] text-white/50 mb-8" aria-label="Breadcrumb">
-          <a href="/" class="hover:text-[#ffe900] transition-colors duration-300">Accueil</a>
-          <i class="ri-arrow-right-s-line text-sm"></i>
-          <span class="text-[#ffe900]">Comité Exécutif</span>
-        </nav>
+        <!-- Signalétique -->
+        <div class="flex gap-1 mb-8">
+          <div class="w-8 h-1.5 bg-[#0071bd]"></div>
+          <div class="w-8 h-1.5 bg-[#38a935]"></div>
+          <div class="w-8 h-1.5 bg-[#ffe900]"></div>
+        </div>
 
         <!-- Titre de la page -->
         <div class="flex flex-col md:flex-row md:items-end justify-between gap-8">
-          <h1 class="text-3xl md:text-5xl lg:text-[56px] text-white font-bold leading-[1.05] tracking-tight max-w-4xl">
+          <h1 class="text-4xl md:text-5xl lg:text-6xl text-white font-black leading-[1.05] tracking-tighter uppercase max-w-4xl">
             Membres du <br />
             <span class="text-[#ffe900] relative inline-block mt-2">
-              Comité Exécutif.
+              Comité Exécutif
               <span class="absolute -bottom-2 left-0 w-1/3 h-[3px] bg-[#ffe900]"></span>
             </span>
           </h1>
@@ -110,71 +161,81 @@ const closeModal = () => {
     </section>
 
     <!-- SECTION CARTES MEMBRES -->
-    <section class="py-16 lg:py-24 max-w-[1400px] mx-auto px-6 lg:px-8">
+    <section class="relative z-10 py-16 lg:py-24 max-w-[1400px] mx-auto px-6 lg:px-8">
       
-      <header class="mb-14">
-        <h2 class="text-2xl md:text-3xl font-bold text-[#38a935] leading-tight tracking-tight uppercase">
-          L'Équipe Dirigeante
-        </h2>
-        <div class="w-12 h-1 bg-[#ffe900] mt-4"></div>
+      <header class="mb-16 flex flex-col gap-2">
+        <div class="flex items-center gap-3">
+          <span class="w-2 h-2 bg-[#38a935] rotate-45 block"></span>
+          <h2 class="text-[10px] font-bold uppercase tracking-[0.2em] text-[#0071bd]">L'Équipe Dirigeante</h2>
+        </div>
+        <h3 class="text-2xl md:text-3xl font-black text-[#001a2e] leading-tight uppercase">
+          Le Bureau Exécutif
+        </h3>
       </header>
 
       <!-- Grille Responsive -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 lg:gap-10">
         
-        <!-- Carte Membre -->
         <article 
-          v-for="membre in membres" 
+          v-for="(membre, index) in membres" 
           :key="membre.id"
-          class="relative group h-full flex"
+          class="relative group h-full flex flex-col"
         >
-          <!-- Décalage asymétrique au hover -->
-          <div class="absolute inset-0 bg-[#38a935] translate-x-3 translate-y-3 transition-transform duration-500 ease-out group-hover:translate-x-4 group-hover:translate-y-4"></div>
+          <!-- Ombre portée texturée asymétrique -->
+          <svg class="absolute inset-0 translate-x-3 translate-y-3 transition-transform duration-500 ease-out z-0 w-full h-full group-hover:translate-x-4 group-hover:translate-y-4">
+            <rect width="100%" height="100%" :fill="getThemeAttrs(membre.colorTheme).pattern" />
+          </svg>
           
-          <div class="relative bg-white border border-slate-200 z-10 w-full flex flex-col transition-colors duration-300 group-hover:border-[#0071bd]/30">
+          <div class="relative bg-white border border-[#001a2e]/10 z-10 w-full flex flex-col flex-grow transition-transform duration-300 group-hover:-translate-x-1 group-hover:-translate-y-1">
             
-            <!-- Photo (Aspect Ratio 1:1 pour homogénéité) -->
-            <div class="w-full aspect-square overflow-hidden relative bg-slate-100">
+            <!-- Photo -->
+            <div class="w-full aspect-square overflow-hidden relative border-b border-[#001a2e]/10">
               <img 
                 :src="membre.image" 
                 :alt="`Photo de ${membre.nom}`" 
-                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 filter grayscale-[20%] group-hover:grayscale-0"
                 loading="lazy"
               />
-              <div class="absolute inset-0 bg-[#0071bd]/10 group-hover:bg-transparent transition-colors duration-500"></div>
+              <div class="absolute inset-0 bg-[#001a2e]/10 group-hover:bg-transparent transition-colors duration-500"></div>
             </div>
 
             <!-- Contenu Carte -->
-            <div class="p-6 flex flex-col flex-grow">
+            <div class="p-6 flex flex-col flex-grow bg-white">
               <div class="flex-grow">
-                <span class="text-[10px] font-mono font-bold uppercase tracking-[0.15em] text-[#38a935] mb-2 block">
+                <span 
+                  class="text-[10px] font-bold uppercase tracking-[0.15em] mb-2 block"
+                  :class="getThemeAttrs(membre.colorTheme).text"
+                >
                   {{ membre.fonction }}
                 </span>
-                <h3 class="text-xl font-bold text-[#0071bd] leading-tight mb-4">
+                <h3 class="text-lg font-black text-[#001a2e] leading-tight mb-4">
                   {{ membre.nom }}
                 </h3>
               </div>
 
               <!-- Actions (LinkedIn & Bouton) -->
-              <div class="mt-6 flex items-center justify-between border-t border-slate-100 pt-5">
+              <div class="mt-6 flex items-center justify-between border-t border-[#001a2e]/10 pt-5">
                 <a 
                   v-if="membre.linkedin" 
                   :href="membre.linkedin" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  class="text-slate-400 hover:text-[#0071bd] transition-colors duration-300"
+                  class="text-[#001a2e]/30 hover:text-[#0071bd] transition-colors duration-300"
                   aria-label="Profil LinkedIn"
                 >
-                  <i class="ri-linkedin-box-fill text-3xl"></i>
+                  <i class="ri-linkedin-box-fill text-2xl"></i>
                 </a>
-                <span v-else class="text-slate-200"><i class="ri-linkedin-box-fill text-3xl"></i></span>
+                <span v-else class="text-[#001a2e]/10"><i class="ri-linkedin-box-fill text-2xl"></i></span>
 
+                <!-- Bouton harmonisé CTA -->
                 <button 
                   @click="openModal(membre)"
-                  class="flex items-center gap-2 text-[11px] font-bold uppercase tracking-wider text-[#0071bd] bg-[#ffe900] px-4 py-2 hover:bg-[#0071bd] hover:text-[#ffe900] transition-colors duration-300"
+                  class="relative group/btn inline-block focus:outline-none"
                 >
-                  Voir la biographie
-                  <i class="ri-arrow-right-line text-sm"></i>
+                  <div class="absolute inset-0 translate-x-1 translate-y-1 transition-transform duration-300 group-hover/btn:translate-x-1.5 group-hover/btn:translate-y-1.5" :class="getThemeAttrs(membre.colorTheme).bg"></div>
+                  <div class="relative bg-white border text-[#001a2e] px-3 py-1.5 text-[10px] font-bold uppercase tracking-wider flex items-center gap-1.5 transition-colors group-hover/btn:bg-[#001a2e] group-hover/btn:text-white" :class="getThemeAttrs(membre.colorTheme).border">
+                    Bio <i class="ri-arrow-right-line"></i>
+                  </div>
                 </button>
               </div>
             </div>
@@ -195,62 +256,71 @@ const closeModal = () => {
       >
         <!-- Backdrop Blur -->
         <div 
-          class="absolute inset-0 bg-[#0071bd]/80 backdrop-blur-sm transition-opacity" 
+          class="absolute inset-0 bg-[#001a2e]/80 backdrop-blur-sm transition-opacity" 
           @click="closeModal"
         ></div>
 
         <!-- Contenu Modale -->
-        <div class="relative bg-white max-w-4xl w-full max-h-[90vh] flex flex-col md:flex-row shadow-2xl overflow-hidden transform transition-all">
+        <div class="relative w-full max-w-4xl max-h-[90vh] flex flex-col md:flex-row transform transition-all">
           
-          <!-- Bouton Fermer -->
-          <button 
-            @click="closeModal"
-            class="absolute top-4 right-4 z-20 w-10 h-10 bg-white/80 md:bg-slate-100 backdrop-blur flex items-center justify-center text-slate-500 hover:text-red-500 hover:bg-slate-200 transition-colors rounded-none"
-            aria-label="Fermer la modale"
-          >
-            <i class="ri-close-line text-2xl"></i>
-          </button>
+          <!-- Ombre portée texturée de la modale -->
+          <svg class="hidden md:block absolute inset-0 translate-x-4 translate-y-4 z-0 w-full h-full pointer-events-none">
+            <rect width="100%" height="100%" :fill="selectedMembre ? getThemeAttrs(selectedMembre.colorTheme).pattern : ''" />
+          </svg>
 
-          <!-- Modale - Partie Image -->
-          <div class="w-full md:w-2/5 aspect-square md:aspect-auto md:min-h-[500px] relative">
-            <img 
-              :src="selectedMembre?.image" 
-              :alt="selectedMembre?.nom" 
-              class="absolute inset-0 w-full h-full object-cover"
-            />
-            <div class="absolute inset-0 bg-[#0071bd]/10"></div>
-          </div>
+          <div class="relative z-10 bg-white border border-[#001a2e]/10 flex flex-col md:flex-row w-full h-full overflow-hidden shadow-2xl">
+            <!-- Bouton Fermer -->
+            <button 
+              @click="closeModal"
+              class="absolute top-4 right-4 z-20 w-10 h-10 bg-white border border-[#001a2e]/10 flex items-center justify-center text-[#001a2e]/50 hover:text-white hover:bg-red-500 transition-colors focus:outline-none"
+              aria-label="Fermer la modale"
+            >
+              <i class="ri-close-line text-2xl"></i>
+            </button>
 
-          <!-- Modale - Partie Texte -->
-          <div class="w-full md:w-3/5 p-8 md:p-12 overflow-y-auto max-h-[50vh] md:max-h-[90vh] flex flex-col">
-            <div class="mb-8">
-              <span class="inline-block px-3 py-1 bg-[#38a935]/10 text-[#38a935] text-[10px] font-mono font-bold uppercase tracking-[0.15em] mb-4 border border-[#38a935]/20">
-                {{ selectedMembre?.fonction }}
-              </span>
-              <h2 class="text-3xl md:text-4xl font-bold text-[#0071bd] mb-2 leading-tight">
-                {{ selectedMembre?.nom }}
-              </h2>
-              <div class="w-12 h-1 bg-[#ffe900] mt-4"></div>
+            <!-- Modale - Partie Image -->
+            <div class="w-full md:w-2/5 h-64 md:h-auto md:min-h-[500px] relative border-b md:border-b-0 md:border-r border-[#001a2e]/10">
+              <img 
+                :src="selectedMembre?.image" 
+                :alt="selectedMembre?.nom" 
+                class="absolute inset-0 w-full h-full object-cover grayscale-[10%]"
+              />
+              <div class="absolute inset-0 bg-[#001a2e]/10"></div>
             </div>
 
-            <!-- Biographie complète -->
-            <div class="prose prose-slate prose-p:font-light prose-p:leading-relaxed text-slate-600 flex-grow">
-              <!-- Utilisation de pre-line pour respecter les sauts de lignes des données -->
-              <p class="whitespace-pre-line text-base/8">
-                {{ selectedMembre?.biographie }}
-              </p>
-            </div>
+            <!-- Modale - Partie Texte -->
+            <div class="w-full md:w-3/5 p-8 md:p-12 overflow-y-auto max-h-[60vh] md:max-h-[90vh] flex flex-col bg-white">
+              <div class="mb-8">
+                <div class="flex items-center gap-2 mb-4">
+                  <span class="w-2 h-2 rotate-45 block" :class="getThemeAttrs(selectedMembre?.colorTheme).bg"></span>
+                  <span class="text-[10px] font-bold uppercase tracking-[0.15em]" :class="getThemeAttrs(selectedMembre?.colorTheme).text">
+                    {{ selectedMembre?.fonction }}
+                  </span>
+                </div>
+                <h2 class="text-3xl md:text-4xl font-black text-[#001a2e] leading-tight mb-4">
+                  {{ selectedMembre?.nom }}
+                </h2>
+                <div class="w-12 h-1" :class="getThemeAttrs(selectedMembre?.colorTheme).bg"></div>
+              </div>
 
-            <div v-if="selectedMembre?.linkedin" class="mt-8 pt-6 border-t border-slate-100">
-              <a 
-                :href="selectedMembre.linkedin" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                class="inline-flex items-center gap-2 text-sm font-bold text-[#0071bd] hover:text-[#38a935] transition-colors"
-              >
-                <i class="ri-linkedin-box-fill text-2xl"></i>
-                Se connecter sur LinkedIn
-              </a>
+              <!-- Biographie complète -->
+              <div class="prose prose-sm md:prose-base prose-p:font-light prose-p:leading-relaxed text-[#001a2e]/70 flex-grow">
+                <p class="whitespace-pre-line text-sm md:text-base">
+                  {{ selectedMembre?.biographie }}
+                </p>
+              </div>
+
+              <div v-if="selectedMembre?.linkedin" class="mt-8 pt-6 border-t border-[#001a2e]/10">
+                <a 
+                  :href="selectedMembre.linkedin" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-[#0071bd] hover:text-[#001a2e] transition-colors"
+                >
+                  <i class="ri-linkedin-box-fill text-xl"></i>
+                  Profil LinkedIn
+                </a>
+              </div>
             </div>
           </div>
 
@@ -262,6 +332,12 @@ const closeModal = () => {
 </template>
 
 <style scoped>
+/* Lissage des polices */
+main {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 /* Animations d'apparition de la modale */
 .fade-enter-active,
 .fade-leave-active {
@@ -275,11 +351,11 @@ const closeModal = () => {
 
 .fade-enter-active .transform,
 .fade-leave-active .transform {
-  transition: transform 0.3s ease-out;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .fade-enter-from .transform,
 .fade-leave-to .transform {
-  transform: scale(0.98) translateY(10px);
+  transform: scale(0.95) translateY(15px);
 }
 </style>

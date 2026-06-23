@@ -139,9 +139,9 @@ const goToArticle = (slug) => {
         <img 
           :src="slide1" 
           alt="Espace académique REESAO" 
-          class="w-full h-full object-cover grayscale opacity-15 scale-105 contrast-125"
+          class="w-full h-full object-cover  contrast-125"
         />
-        <div class="absolute inset-0 bg-gradient-to-t from-[#0071bd] via-transparent to-[#0071bd]/50"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-[#0071bd]/0 via-transparent to-[#0071bd]/0"></div>
       </div>
       
       <div 
@@ -251,11 +251,11 @@ const goToArticle = (slug) => {
               
               <div class="relative bg-white border border-[#0071bd]/10 z-10 w-full flex flex-col h-full transition-all duration-300 group-hover:-translate-x-1 group-hover:-translate-y-1 bg-white">
                 
-                <div class="w-full aspect-[16/10] overflow-hidden relative bg-[#0071bd] border-b border-[#0071bd]/10 group/img">
+                <div class="w-full aspect-[16/10] overflow-hidden relative bg-[#0071bd]/0 border-b border-[#0071bd]/10 group/img">
                   <img 
                     :src="article.image" 
                     :alt="article.titre" 
-                    class="w-full h-full object-cover opacity-80 transition-all duration-700 ease-out group-hover/img:scale-105 group-hover/img:opacity-100 mix-blend-luminosity hover:mix-blend-normal" 
+                    class="w-full h-full object-cover opacity-100 transition-all duration-700 ease-out group-hover/img:scale-105 group-hover/img:opacity-100  hover:mix-blend-normal" 
                     loading="lazy"
                   />
                   <span :class="['absolute top-4 left-4 font-mono text-[9px] font-bold px-3 py-1 tracking-widest uppercase relative overflow-hidden shadow-sm', badgeStyles[article.accent]]">

@@ -261,7 +261,7 @@ const filteredImages = computed(() => {
                   <img 
                     :src="image.source_url" 
                     :alt="image.title" 
-                    class="w-full h-full object-cover transition-all duration-700 ease-out mix-blend-luminosity opacity-80 group-hover:mix-blend-normal group-hover:opacity-100 group-hover:scale-105"
+                    class="w-full h-full object-cover transition-all duration-700 ease-out  opacity-80 group-hover:mix-blend-normal group-hover:opacity-100 group-hover:scale-105"
                     loading="lazy"
                   />
                   <div class="absolute inset-0 bg-[#0071bd]/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-4 backdrop-blur-xs">
