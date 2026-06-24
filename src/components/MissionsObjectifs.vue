@@ -143,7 +143,7 @@ onUnmounted(() => {
             <i :class="item.icon" class="text-3xl"></i>
           </div>
           
-          <p class="text-white/80 font-light text-lg lg:text-xl leading-relaxed transition-colors duration-300 text-center md:text-left">
+          <p class="text-white/80 font-black text-lg lg:text-xl leading-relaxed transition-colors duration-300 text-center md:text-left">
             {{ item.text }}
           </p>
         </div>

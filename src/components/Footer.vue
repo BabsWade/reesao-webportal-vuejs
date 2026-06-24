@@ -26,7 +26,7 @@
       
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 pb-16 border-b border-white/10">
         
-        <div class="lg:col-span-4 space-y-6 pr-0 lg:pr-8">
+        <div class="lg:col-span-6 space-y-6 pr-0 lg:pr-8">
           <div class="inline-flex items-center gap-4 group cursor-default">
             <div class="relative w-12 h-12 shrink-0">
               <svg class="absolute inset-0 translate-x-1 translate-y-1 transition-transform duration-300 ease-out z-0 w-full h-full group-hover:translate-x-0 group-hover:translate-y-0">
@@ -62,7 +62,7 @@
           </div>
         </div>
 
-        <div class="lg:col-span-3 space-y-6 lg:pl-6">
+<!--         <div class="lg:col-span-3 space-y-6 lg:pl-6">
           <div class="space-y-2">
             <h3 class="text-[10px] uppercase tracking-[0.2em] text-white/50 font-black flex items-center gap-2.5">
               <span class="w-1.5 h-1.5 bg-[#38a935] rotate-45 block"></span>
@@ -81,9 +81,9 @@
               {{ link.name }}
             </a>
           </nav>
-        </div>
+        </div> -->
 
-        <div class="lg:col-span-3 space-y-6">
+        <div class="lg:col-span-6 space-y-6">
           <div class="space-y-2">
             <h3 class="text-[10px] uppercase tracking-[0.2em] text-white/50 font-black flex items-center gap-2.5">
               <span class="w-1.5 h-1.5 bg-[#38a935] rotate-45 block"></span>
@@ -94,7 +94,7 @@
           <ul class="space-y-5 text-xs sm:text-sm text-white/70 font-light">
             <li class="flex items-start gap-3.5 group cursor-default">
               <i class="ri-map-pin-line text-[#ffe900] opacity-70 group-hover:opacity-100 transition-opacity mt-0.5 text-base shrink-0"></i>
-              <span class="leading-relaxed group-hover:text-white transition-colors duration-300">UCAD, Secrétariat REESAO<br />BP 5005, Dakar, Sénégal</span>
+              <span class="leading-relaxed group-hover:text-white transition-colors duration-300">Siège - Université de Lomé, Togo</span>
             </li>
             <li class="flex items-center gap-3.5 group">
               <i class="ri-mail-line text-[#ffe900] opacity-70 group-hover:opacity-100 transition-opacity text-base shrink-0"></i>
@@ -107,7 +107,7 @@
           </ul>
         </div>
 
-        <div class="lg:col-span-2 space-y-6">
+       <!--  <div class="lg:col-span-2 space-y-6">
           <div class="space-y-2">
             <h3 class="text-[10px] uppercase tracking-[0.2em] text-white/50 font-black flex items-center gap-2.5">
               <span class="w-1.5 h-1.5 bg-[#38a935] rotate-45 block"></span>
@@ -148,7 +148,7 @@
               </form>
             </Transition>
           </div>
-        </div>
+        </div> -->
       </div>
 
       <div class="mt-8 flex flex-col lg:flex-row items-center justify-between gap-6 font-mono text-[9px] font-bold text-white/40 uppercase tracking-[0.25em]">
