@@ -16,7 +16,7 @@ const membres = ref([
     fonction: 'Président du REESAO',
     image: presidentImg,
     linkedin: 'https://linkedin.com',
-    biographie: `Le Professeur Issa Abdou MOUMOULA est le Président actuel du REESAO. Éminent chercheur et administrateur académique, il a consacré plus de 20 ans au développement de l'enseignement supérieur en Afrique de l'Ouest. \n\nSous sa direction, de nombreuses réformes ont été initiées pour harmoniser le système LMD au sein de l'espace ouest-africain. Il est également l'auteur de plusieurs publications scientifiques de renommée internationale sur l'innovation éducative et la gestion universitaire.`,
+    biographie: `Recteur de l’Université Iba Der Thiam de Thiès (UIDT)\nEnseignant-chercheur, Professeur titulaire des universités\n\nMonsieur Mamadou Babacar NDIAYE est Titulaire d’un doctorat Unique à l’Ecole Centrale de Lyon en France et est spécialiste de la Physique des matériaux et énergétique.\n\nEn février 2010, Il est recruté à l’Université Iba Der THIAM en qualité d’assistant. Depuis lors il a gravi les échelons et accumule plus de dix (10) ans d’expérience dans la gestion pédagogique et administrative d’établissement d’enseignement supérieur.\n\nTour à tour il fut chef de département, Directeur des études et Directeur de l’Institut Universitaire de Technologie, poste qu’il occupe jusqu’à sa nomination comme Recteur en avril 2023. Il est Membre actif des organes de gouvernance de l’Université depuis une dizaine d’années aussi (conseil académique et conseil d’administration).\n\nProfesseur NDIAYE est un acteur clé dans la réforme de la gouvernance universitaire de l’Enseignement supérieur au Sénégal avec une participation effective dans l’élaboration des principaux textes législatifs et réglementaires. Il membre actif de toutes les commissions chargées de réfléchir sur la vie de l’Université, entre autres : plan stratégique, suivi et évaluation CDP à l’Institut Universitaire de Technologie (IUT), suivi des chantiers de l’UIDT, auto-évaluation institutionnelle, membre de la commission nationale électorale des représentants du Sénégal aux CTS du CAMES-Ministère de l’Enseignement Supérieur, de la Recherche et de l’Innovation (MESRI), de la commission nationale de supervision du processus et orientation des bacheliers du Sénégal (MESRI).\n\nLe Recteur de l’UIDT est membre de plusieurs Sociétés savantes : de société française de métallurgie et de Matériaux (SF2M), membre de société de Physique du Sénégal (SPS). Il est auteur de plusieurs dizaines de publications.`,
     colorTheme: 'blue'
   },
   {
@@ -25,7 +25,7 @@ const membres = ref([
     fonction: 'Vice-Président',
     image: vp1Img,
     linkedin: 'https://linkedin.com',
-    biographie: `Docteure en Sciences de l'Éducation, Aminata Diallo supervise les commissions spécialisées du réseau. Elle a auparavant dirigé l'Institut de Recherche en Pédagogie Avancée.\n\nElle s'assure de l'alignement des programmes académiques avec les standards internationaux, avec un focus particulier sur l'intégration des technologies de l'information et de la communication (TIC) dans l'apprentissage.`,
+    biographie: `A venir`,
     colorTheme: 'green'
   },
   {
@@ -34,7 +34,7 @@ const membres = ref([
     fonction: '2ᵉ Vice-Président',
     image: vp2Img,
     linkedin: null, // Test sans LinkedIn
-    biographie: `Professeur titulaire en Économie, Koffi Kouassi coordonne l'ensemble des activités administratives et le suivi quotidien des dossiers du REESAO. \n\nIl est la cheville ouvrière de l'organisation matérielle des rencontres annuelles et assure la liaison constante entre les différents établissements membres et les partenaires internationaux.`,
+    biographie: `A venir`,
     colorTheme: 'yellow'
   },
   {
@@ -43,7 +43,7 @@ const membres = ref([
     fonction: 'Secrétaire Général (SG)',
     image: sgImg,
     linkedin: 'https://linkedin.com',
-    biographie: `Experte-comptable diplômée avec une spécialisation en gestion des institutions publiques, Fatou Sow gère les ressources financières du REESAO depuis 2021.\n\nElle veille à la transparence financière, à la collecte des cotisations et à la gestion des subventions allouées aux projets de recherche inter-universitaires du réseau.`,
+    biographie: `Professeur SARR a effectué l’essentiel de son parcours universitaire en France au sein de l’Université Paris 12 de Créteil et à l’Institut National de Sciences Appliquées (INSA) de Lyon où il a obtenu respectivement un diplôme d’ingénieur Informatique spécialité Réseaux et Télécommunications (2003), un DEA (2004) et un Doctorat en Informatique (2007).\n\nA la suite de ce parcours universitaire, Prof. SARR est recruté en qualité d’Assistant en Informatique dès l’année 2007 à l’UIDT, Maître Assistant en 2008, Maître de Conférences 2012. C’est en Octobre 2016 qu’il est consacré Professeur Titulaire des Universités à l’UIDT. En Octobre 2020, il devient Professeur Titulaire de Classe exceptionnelle des Universités !\n\nAvec plus de vingt (20) années d’expérience dans l’enseignement en Informatique, il a enseigné en qualité de Professeur associé en France, au Sénégal, au Tchad, au Togo et au Burkina Faso. Conjointement à cette expérience académique il a occupé les fonctions administratives de Responsable Scientifique du Master Informatique, Responsable de la filière Informatique, Chef du Département Informatique, Vice-Directeur, Directeur de l’UFR Sciences et Technologies (SET) et Directeur de la Cellule Assurance Qualité de l’UIDT.\n\nC’est fort de cette riche expérience administrative que Pr Cheikh SARR a été élu en Juillet 2023, Vice-Recteur en charge des Études de l’Innovation Pédagogique et de la Vie Universitaire de l’UIDT.\n\nProf. SARR a effectué un post-doc de recherche à l’ENS de Lyon dans le cadre de ses recherches sur les systèmes de communications sans fil ad hoc. Il a eu à encadrer plusieurs thèses de doctorat unique et près d’une cinquantaine de mémoires de Master.\n\nDésigné Expert évaluateur de l’Autorité Nationale d’Assurance Qualité de l’Enseignement Supérieur (ANAQ-Sup) depuis 2014, il est également expert en assurance qualité pour le compte du CAMES et de l’Union Africaine. Au niveau central, il a occupé le poste de Directeur de la Cellule Assurance Qualité (2021-2023) et est membre du Conseil Scientifique et Pédagogique de l’École Doctorale 2DS, du Conseil Académique et du Conseil d’Administration de l’UIDT.\n\nEn termes de distinction, Professeur SARR est lauréat en 2020 du prix International de recherche le Next Einstein Forum qui consacre les jeunes chercheurs africains en devenir, pour ses travaux de recherche sur les voitures intelligentes ainsi que d’une bourse d’excellence de recherche de l’AUF.\n\nMalgré ses responsabilités administratives, Prof. Cheikh SARR reste actif dans la recherche, dans ses domaines de prédilection, à savoir : l’intelligence artificielle (apprentissage automatique), l’internet des objets, l’Internet des Objets, la Cyber sécurité. Ses travaux de recherche font l’objet de plus d’une cinquantaine de publications dans des revues internationales.`,
     colorTheme: 'blue'
   },
   {
@@ -52,8 +52,7 @@ const membres = ref([
     fonction: 'Secrétaire Général Adjoint (SGA)',
     image: sgaImg,
     linkedin: 'https://linkedin.com',
-    biographie: `Experte-comptable diplômée avec une spécialisation en gestion des institutions publiques, Fatou Sow gère les ressources financières du REESAO depuis 2021.\n\nElle veille à la transparence financière, à la collecte des cotisations et à la gestion des subventions allouées aux projets de recherche inter-universitaires du réseau.`,
-    colorTheme: 'green'
+    biographie: `Il a obtenu un Doctorat (PhD) en Economie de l’Agriculture à l’Université du Texas A&M aux Etats-Unis (2009).\n\nIl est depuis 2019, Professeur Titulaire et Agrégé en Sciences Economiques à la Faculté des Sciences Economiques et de Gestion (FASEG) à Université de Lomé. Il est un économiste de formation avec un Master en Macroéconomie Internationale obtenu à l’Université de Cocody à Abidjan, Côte d’Ivoire (2003) et un Master en Microéconomie & Econométrie à l’Université du Texas A&M (2007). Avant d’arriver à l’Université de Lomé, il a enseigné à l’Université de l’Etat de Michigan au nord des Etats-Unis (2010-2012) et travaillé en tant que chercheur senior à la Fondation Eni Enrico Mattei (FEEM) et au Centre Euro-Méditerranéen pour le Changement Climatique (CMCC), à Milan, au nord de l’Italie (2012-2013).\n\nSur le plan administratif, Il a servi comme Directeur-adjoint du programme WASCAL à l’Université de Lomé au Togo (2013-2015) et est actuellement responsable de l’Equipe de Recherche en Economie Agricole et Appliquée (ERE2A). Ses Publications ont paru dans plusieurs revues de renommée internationale dont Ecological Economics, Agricultural Economics, African Development Review, Applied Economic Perspectives & Policy, Climatic Change, Energy Policy, Energy Economics, Journal of Quantitative Economics, Finance Research Letters, Economie Rurale, …`
   },
   {
     id: 6,
@@ -61,7 +60,7 @@ const membres = ref([
     fonction: 'Trésorière générale',
     image: trImg,
     linkedin: 'https://linkedin.com',
-    biographie: `Experte-comptable diplômée avec une spécialisation en gestion des institutions publiques, Fatou Sow gère les ressources financières du REESAO depuis 2021.\n\nElle veille à la transparence financière, à la collecte des cotisations et à la gestion des subventions allouées aux projets de recherche inter-universitaires du réseau.`,
+    biographie: `A venir`,
     colorTheme: 'yellow'
   }
 ])
