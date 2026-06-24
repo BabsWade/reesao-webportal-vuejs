@@ -12,6 +12,7 @@ import DetailsActualite from '../components/DetailsActualite.vue'
 import DetailsActualite2 from '../components/DetailsActualite2.vue'
 import Formation from '../components/Formation.vue'
 import Mediatheque from '../components/Mediatheque.vue'
+import Contact from '../components/Contact.vue'
 
 const routes = [
   {
@@ -70,6 +71,12 @@ const routes = [
     path: '/actualites/:slug',
     name: 'DetailsActualite2',
     component: DetailsActualite2
+  },
+  {
+    // Le ":slug" définit le paramètre dynamique qui variera pour chaque article
+    path: '/contact',
+    name: 'Contact',
+    component: Contact
   }
 ]
 

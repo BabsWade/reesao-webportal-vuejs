@@ -140,7 +140,7 @@
           </div>
         </nav>
 
-        <div class="hidden lg:flex items-center gap-6">
+       <!--  <div class="hidden lg:flex items-center gap-6">
           <button 
             aria-label="Recherche" 
             class="transition-colors text-lg" 
@@ -159,7 +159,7 @@
               <i class="ri-arrow-right-line text-base text-[#ffe900]"></i>
             </div>
           </button>
-        </div>
+        </div> -->
 
         <button 
           @click="toggleMobileMenu" 
@@ -285,6 +285,7 @@ const menuItems = [
   { label: 'Actualités', to: '/actualites' },
   { label: 'Formations', to: '/formation'},
   { label: 'Mediathèque', to: '/mediatheque' },
+  { label: 'Contact', to: '/contact' },
 ]
 
 const closeMobileMenu = () => {

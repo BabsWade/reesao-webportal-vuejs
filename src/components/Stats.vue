@@ -315,7 +315,7 @@ const toggleMarquee = (state) => {
           </div>
           
           <!-- Contrôles Gauche/Droite -->
-          <div class="flex items-center gap-1 border border-[#0071bd]/20 p-0.5 bg-white shrink-0">
+          <div class="flex items-center gap-1 border border-[#0071bd]/0 p-0.5 bg-white shrink-0">
             <button 
               @click="slideLeft" 
               class="w-8 h-8 flex items-center justify-center text-[#0071bd]/50 hover:bg-[#0071bd]/5 hover:text-[#0071bd] transition-colors focus:outline-none"
