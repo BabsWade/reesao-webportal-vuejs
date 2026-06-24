@@ -6,6 +6,83 @@ import cedeaoLogo from "../assets/CEDEAO_Logo.svg.png";
 import aufLogo from "../assets/Logo_AUF.svg.png";
 import univlome from "../assets/univlome-siege.jpeg";
 import univlomeLogo from "../assets/LOGO-COULEUR-TRANSP.png";
+import { onMounted, onUnmounted } from 'vue';
+
+const scrollContainer = ref(null);
+let animationFrameId = null;
+const isHovered = ref(false);
+const isTemporarilyPaused = ref(false);
+let tempPauseTimer = null;
+
+const SCROLL_SPEED = 1; // Pixels par frame (vitesse du défilement)
+const JUMP_AMOUNT = 320; // Distance parcourue lors d'un clic (ajustable)
+
+const autoScroll = () => {
+  // On ne fait défiler automatiquement que si la souris n'est pas dessus 
+  // et si l'utilisateur n'est pas en train d'utiliser les flèches
+  if (scrollContainer.value && !isHovered.value && !isTemporarilyPaused.value) {
+    const el = scrollContainer.value;
+    
+    // Comme nous avons 3 blocs identiques, un bloc représente 1/3 de la largeur totale
+    const singleBlockWidth = el.scrollWidth / 3;
+    
+    el.scrollLeft += SCROLL_SPEED;
+
+    // Boucle infinie invisible : si on a dépassé le premier bloc, on le réinitialise
+    if (el.scrollLeft >= singleBlockWidth) {
+      el.scrollLeft -= singleBlockWidth;
+    }
+  }
+  animationFrameId = requestAnimationFrame(autoScroll);
+};
+
+// Pause temporaire de l'auto-défilement pour laisser le "smooth scroll" manuel se faire
+const pauseAutoScroll = () => {
+  isTemporarilyPaused.value = true;
+  if (tempPauseTimer) clearTimeout(tempPauseTimer);
+  tempPauseTimer = setTimeout(() => {
+    isTemporarilyPaused.value = false;
+  }, 800); // Reprend l'auto-défilement environ 800ms après le clic
+};
+
+const slideLeft = () => {
+  const el = scrollContainer.value;
+  if (!el) return;
+  
+  pauseAutoScroll();
+  const singleBlockWidth = el.scrollWidth / 3;
+
+  // Si on est trop près du bord gauche, on saute instantanément dans le bloc 2 pour avoir de la marge
+  if (el.scrollLeft < JUMP_AMOUNT) {
+    el.scrollLeft += singleBlockWidth;
+  }
+  
+  el.scrollBy({ left: -JUMP_AMOUNT, behavior: 'smooth' });
+};
+
+const slideRight = () => {
+  const el = scrollContainer.value;
+  if (!el) return;
+  
+  pauseAutoScroll();
+  const singleBlockWidth = el.scrollWidth / 3;
+
+  // Si on est trop près de la fin, on revient discrètement au début avant le slide
+  if (el.scrollLeft >= singleBlockWidth * 2 - JUMP_AMOUNT) {
+    el.scrollLeft -= singleBlockWidth;
+  }
+  
+  el.scrollBy({ left: JUMP_AMOUNT, behavior: 'smooth' });
+};
+
+onMounted(() => {
+  animationFrameId = requestAnimationFrame(autoScroll);
+});
+
+onUnmounted(() => {
+  cancelAnimationFrame(animationFrameId);
+  if (tempPauseTimer) clearTimeout(tempPauseTimer);
+});
 
 const activeIndex = ref(null);
 const isMarqueePaused = ref(false);
@@ -225,7 +302,7 @@ const toggleMarquee = (state) => {
       <!-- ========================== -->
       <!-- 3. BLOC DES PARTENAIRES    -->
       <!-- ========================== -->
-      <div class="w-full border-t border-[#0071bd]/10 pt-10">
+<div class="w-full border-t border-[#0071bd]/10 pt-10">
         
         <!-- En-tête Partenaires -->
         <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-8">
@@ -237,33 +314,34 @@ const toggleMarquee = (state) => {
             <h4 class="text-xl font-black text-[#38a935]">Partenaires Stratégiques</h4>
           </div>
           
-          <!-- Contrôles du Marquee -->
+          <!-- Contrôles Gauche/Droite -->
           <div class="flex items-center gap-1 border border-[#0071bd]/20 p-0.5 bg-white shrink-0">
             <button 
-              @click="toggleMarquee(false)" 
-              class="w-8 h-8 flex items-center justify-center transition-colors focus:outline-none"
-              :class="!isMarqueePaused ? 'bg-[#0071bd] text-white' : 'text-[#0071bd]/50 hover:bg-[#0071bd]/5 hover:text-[#0071bd]'"
-              aria-label="Lecture"
+              @click="slideLeft" 
+              class="w-8 h-8 flex items-center justify-center text-[#0071bd]/50 hover:bg-[#0071bd]/5 hover:text-[#0071bd] transition-colors focus:outline-none"
+              aria-label="Défiler à gauche"
             >
-              <i class="ri-play-fill text-sm"></i>
+              <i class="ri-arrow-left-s-line text-lg"></i>
             </button>
             <button 
-              @click="toggleMarquee(true)" 
-              class="w-8 h-8 flex items-center justify-center transition-colors focus:outline-none"
-              :class="isMarqueePaused ? 'bg-[#38a935] text-white' : 'text-[#0071bd]/50 hover:bg-[#0071bd]/5 hover:text-[#0071bd]'"
-              aria-label="Pause"
+              @click="slideRight" 
+              class="w-8 h-8 flex items-center justify-center text-[#0071bd]/50 hover:bg-[#0071bd]/5 hover:text-[#0071bd] transition-colors focus:outline-none"
+              aria-label="Défiler à droite"
             >
-              <i class="ri-pause-fill text-sm"></i>
+              <i class="ri-arrow-right-s-line text-lg"></i>
             </button>
           </div>
         </div>
 
-        <!-- Animation Marquee (Pleine largeur) -->
+        <!-- Zone d'animation (Pleine largeur) -->
         <div class="relative w-full overflow-hidden before:absolute before:left-0 before:top-0 before:z-10 before:h-full before:w-20 before:bg-gradient-to-r before:from-white before:to-transparent after:absolute after:right-0 after:top-0 after:z-10 after:h-full after:w-20 after:bg-gradient-to-l after:from-white after:to-transparent">
           
+          <!-- Conteneur défilant -->
           <div 
-            class="marquee-wrapper flex w-max gap-8 py-2"
-            :class="{ 'marquee-paused': isMarqueePaused }"
+            ref="scrollContainer"
+            class="flex w-full overflow-x-auto gap-8 py-2 hide-scrollbar cursor-grab active:cursor-grabbing"
+            @mouseenter="isHovered = true"
+            @mouseleave="isHovered = false"
           >
             <!-- Bloc 1 -->
             <div class="flex gap-8 shrink-0">
@@ -284,7 +362,7 @@ const toggleMarquee = (state) => {
               </a>
             </div>
 
-            <!-- Bloc 2 (Clone) -->
+            <!-- Bloc 2 (Clone indispensable pour la boucle infinie) -->
             <div class="flex gap-8 shrink-0" aria-hidden="true">
               <a 
                 v-for="(partner, pIdx) in partners" 
@@ -303,7 +381,7 @@ const toggleMarquee = (state) => {
               </a>
             </div>
             
-             <!-- Bloc 3 (Clone supplémentaire pour la grande pleine largeur) -->
+             <!-- Bloc 3 (Clone supplémentaire pour les retours en arrière fluides) -->
              <div class="flex gap-8 shrink-0" aria-hidden="true">
               <a 
                 v-for="(partner, pIdx) in partners" 
@@ -344,4 +422,13 @@ const toggleMarquee = (state) => {
 .marquee-wrapper:hover {
   animation-play-state: paused;
 }
+/* Permet de cacher la barre de défilement générée par "overflow-x-auto" */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none;    /* Firefox */
+}
+
 </style>
