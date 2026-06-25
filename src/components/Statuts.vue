@@ -74,7 +74,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <main class="w-full bg-white font-sans selection:bg-[#ffe900] selection:text-[#0071bd] overflow-hidden">
+  <main class="w-full bg-white font-sans selection:bg-[#ffe900] selection:text-[#0071bd] ">
     
     <svg class="absolute w-0 h-0 pointer-events-none" xmlns="http://www.w3.org/2000/svg">
       <defs>

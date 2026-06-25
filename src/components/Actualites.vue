@@ -35,6 +35,14 @@ onMounted(() => {
   fetchArticles()
 })
 
+// Fonction d'aide pour extraire l'URL de la première image d'une chaîne HTML
+const extractFirstImageUrl = (html) => {
+  if (!html) return null;
+  const imgRegex = /<img[^>]+src="([^">]+)"/g;
+  const match = imgRegex.exec(html);
+  return match ? match[1] : null;
+}
+
 const fetchArticles = async () => {
   isLoading.value = true
   try {
@@ -44,6 +52,8 @@ const fetchArticles = async () => {
       const terms = post._embedded?.['wp:term']?.[0] || []
       const categoryNames = terms.map(t => t.name)
       const mainCategory = categoryNames[0] || 'Actualité'
+      const contentHtml = post.content.rendered;
+      const contentImage = extractFirstImageUrl(contentHtml);
 
       return {
         id: post.id,
@@ -55,7 +65,9 @@ const fetchArticles = async () => {
         date: new Date(post.date).toLocaleDateString('fr-FR', {
           day: '2-digit', month: 'long', year: 'numeric'
         }),
+        // Image de mise en avant par défaut
         image: post._embedded?.['wp:featuredmedia']?.[0]?.source_url || 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&q=80&w=800&h=450',
+        contentImage: contentImage, // Image extraite du contenu
         slug: `/actualites/${post.slug}`
       }
     })
@@ -112,7 +124,7 @@ const goToArticle = (slug) => {
 </script>
 
 <template>
-  <main class="w-full bg-[#0071bd]/02 font-sans selection:bg-[#ffe900] selection:text-[#0071bd] overflow-hidden">
+  <main class="w-full bg-[#0071bd]/02 font-sans selection:bg-[#ffe900] selection:text-[#0071bd] ">
     
     <svg class="absolute w-0 h-0 pointer-events-none" xmlns="http://www.w3.org/2000/svg">
       <defs>
@@ -134,7 +146,7 @@ const goToArticle = (slug) => {
       </defs>
     </svg>
 
-       <section class="relative pt-44 pb-24 lg:pt-52 lg:pb-32 bg-[#38a935] border-b border-[#0071bd]/20 overflow-hidden">
+        <section class="relative pt-44 pb-24 lg:pt-52 lg:pb-32 bg-[#38a935] border-b border-[#0071bd]/20 overflow-hidden">
       <div class="absolute inset-0 z-0">
         <img 
           :src="slide1" 
@@ -324,7 +336,7 @@ const goToArticle = (slug) => {
                 
                 <div class="w-full sm:w-28 aspect-video sm:aspect-square overflow-hidden relative bg-[#0071bd] shrink-0 border-b sm:border-b-0 sm:border-r border-[#0071bd]/10 group/thumb">
                   <img 
-                    :src="article.image" 
+                    :src="article.contentImage || article.image" 
                     :alt="article.titre" 
                     class="w-full h-full object-cover opacity-75 transition-transform duration-500 group-hover/thumb:scale-105" 
                     loading="lazy"
