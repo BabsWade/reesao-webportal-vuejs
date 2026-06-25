@@ -1,6 +1,8 @@
 <script setup>
 import { ref, onMounted, onBeforeUnmount, computed } from 'vue'
 import slide1 from '../assets/hero.jpg' 
+import slide2 from '../assets/hero2.jpg' 
+import slide3 from '../assets/hero4.jpg' 
 
 const slides = [
   {
@@ -15,14 +17,14 @@ const slides = [
     titlePrefix: "Propulser la recherche par",
     highlight: "L'Excellence",
     text: "Connecter les universités ouest-africaines aux standards mondiaux grâce au levier technologique et aux plateformes partagées.",
-    img: slide1
+    img: slide2
   },
   {
     tag: "Synergie Panafricaine",
     titlePrefix: "Bâtir un espace uni via",
     highlight: "La Synergie",
     text: "Fédérer les compétences et les ressources des institutions pour former les leaders et concevoir les solutions de demain.",
-    img: slide1
+    img: slide3
   }
 ]
 

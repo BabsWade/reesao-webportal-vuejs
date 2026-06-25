@@ -1,7 +1,7 @@
 <script setup>
-import slide1 from '../assets/hero.jpg' 
+import minvid from '../assets/video-min.jpg' 
 const videoUrl = "https://youtube.com/playlist?list=PLaWW_NW0uRaBcsb5MpAypH5lmaTDHB0YO&si=rjAApX83InJZXUYR";
-const thumbnail = slide1;
+const thumbnail = minvid;
 </script>
 
 <template>
