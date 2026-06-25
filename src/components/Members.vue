@@ -206,10 +206,10 @@ const filteredUniversities = computed(() => {
   class="absolute left-[-20px] top-0 bottom-0 w-[1px] opacity-10"
   style="background: repeating-linear-gradient(0deg, #0071bd, #0071bd 4px, transparent 4px, transparent 8px);"
 ></div>
-                <p class="font-mono text-[11px] text-[#0071bd]/40 font-bold tracking-wider mb-2.5 flex items-center gap-2">
+                <!-- <p class="font-mono text-[11px] text-[#0071bd]/40 font-bold tracking-wider mb-2.5 flex items-center gap-2">
                    <span class="w-1 h-1 bg-[#ffe900] rotate-45 transform"></span>
                   {{ univ.acronym }} // {{ univ.id }}
-                </p>
+                </p> -->
                 <h3 class="text-xl font-bold text-[#0071bd] leading-[1.2] tracking-tight group-hover:text-[#38a935] transition-colors duration-300">
                   {{ univ.name }}
                 </h3>
@@ -220,9 +220,9 @@ const filteredUniversities = computed(() => {
                   <span class="w-1.5 h-1.5 bg-[#38a935] rotate-45 transform block opacity-70"></span>
                   {{ univ.location }}
                 </div>
-                <div>
+                <!-- <div>
                   Est. <span class="text-[#0071bd] font-black">{{ univ.founded }}</span>
-                </div>
+                </div> -->
               </div>
             </div>
 

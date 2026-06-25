@@ -140,10 +140,10 @@ onBeforeUnmount(() => {
                   </span>
                 </h1>
                 
-                <p class="max-w-2xl text-white/90 text-base md:text-lg lg:text-xl font-light leading-relaxed pt-6 pl-6 mt-8 relative">
+                <!-- <p class="max-w-2xl text-white/90 text-base md:text-lg lg:text-xl font-light leading-relaxed pt-6 pl-6 mt-8 relative">
                   <span class="absolute left-0 top-6 bottom-0 w-[4px]" style="background: repeating-linear-gradient(0deg, #ffe900, #ffe900 8px, transparent 8px, transparent 12px);"></span>
                   {{ slides[current].text }}
-                </p>
+                </p> -->
               </div>
             </transition>
 
