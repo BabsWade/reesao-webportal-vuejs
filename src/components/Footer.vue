@@ -28,21 +28,21 @@
         
         <div class="lg:col-span-6 space-y-6 pr-0 lg:pr-8">
           <div class="inline-flex items-center gap-4 group cursor-default">
-            <div class="relative w-12 h-12 shrink-0">
+           <!--  <div class="relative w-12 h-12 shrink-0">
               <svg class="absolute inset-0 translate-x-1 translate-y-1 transition-transform duration-300 ease-out z-0 w-full h-full group-hover:translate-x-0 group-hover:translate-y-0">
                 <rect width="100%" height="100%" fill="url(#footer-texture-yellow)" />
               </svg>
               <div class="relative w-full h-full border border-white/20 bg-[#0071bd] flex items-center justify-center text-xl font-black tracking-widest text-white z-10 transition-transform duration-300 group-hover:-translate-x-0.5 group-hover:-translate-y-0.5">
                 R.
               </div>
-            </div>
-            <span class="text-xl font-black tracking-[0.25em] uppercase transition-colors duration-500 group-hover:text-[#ffe900]">REESAO</span>
+            </div> -->
+            <span class="text-xl font-black tracking-[0.25em] uppercase transition-colors duration-500 group-hover:text-[#ffe900]">Suivez nous:</span>
           </div>
           
-          <p class="text-white/60 text-xs sm:text-sm leading-relaxed font-light">
-            Réseau pour l’Émulation de l’Enseignement Supérieur et de la Recherche en Afrique de l’Ouest. 
-            <br /><span class="italic text-[#ffe900] font-normal opacity-90">Harmonisation des compétences et excellence transfrontalière.</span>
-          </p>
+          <p class="italic text-[#ffe900] font-normal opacity-90">
+            Ne manquez aucune actualité du REESAO 
+<!--             <br /><span class="italic text-[#ffe900] font-normal opacity-90">Ne manquez aucune actualité du REESAO </span>
+ -->          </p>
 
           <div class="flex items-center gap-4 pt-2">
             <a 
@@ -160,8 +160,8 @@
         <div class="flex flex-wrap items-center justify-center gap-6 lg:gap-10">
           <a href="#" class="hover:text-[#ffe900] transition-colors duration-300 border-b border-transparent hover:border-[#ffe900]/20 pb-0.5">Mentions Légales</a>
           <a href="#" class="hover:text-[#ffe900] transition-colors duration-300 border-b border-transparent hover:border-[#ffe900]/20 pb-0.5">Données Publiques</a>
-          <span class="opacity-30 hidden sm:inline-block tracking-widest">PROT.REG-WEST-AFR // v3.4.1</span>
-        </div>
+<!--           <span class="opacity-30 hidden sm:inline-block tracking-widest">PROT.REG-WEST-AFR // v3.4.1</span>
+ -->        </div>
       </div>
 
     </div>

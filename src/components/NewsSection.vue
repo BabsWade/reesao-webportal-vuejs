@@ -288,7 +288,7 @@ const goToArticle = (slug) => {
         </router-link>
       </div>
 
-      <footer class="mt-24 pt-8 border-t border-[#0071bd]/10">
+     <!--  <footer class="mt-24 pt-8 border-t border-[#0071bd]/10">
         <div class="flex flex-col sm:flex-row justify-between items-center gap-6 text-[10px] font-mono font-bold uppercase tracking-[0.2em] text-[#0071bd]/40 relative px-6">
           
           <div class="absolute left-0 top-0 bottom-0 w-[3px]" style="background: repeating-linear-gradient(0deg, rgba(0,113,189,0.1), rgba(0,113,189,0.1) 2px, transparent 2px, transparent 4px);"></div>
@@ -303,7 +303,7 @@ const goToArticle = (slug) => {
             Dernière mise à jour : Année académique 2026
           </div>
         </div>
-      </footer>
+      </footer> -->
 
     </div>
   </section>

@@ -158,8 +158,8 @@ import slide1 from '../assets/hero.jpg'; // Image de fond pour le banner
               <div>
                 <h4 class="text-xs font-black uppercase tracking-[0.1em] text-[#38a935] mb-2">Courrier Électronique</h4>
                 <a href="mailto:contact@reesao.org" class="text-[#0071bd]/80 text-sm font-medium hover:text-[#0071bd] transition-colors block mb-1">contact@reesao.org</a>
-                <a href="mailto:sg@reesao.org" class="text-[#0071bd]/80 text-sm font-medium hover:text-[#0071bd] transition-colors block">sg@reesao.org</a>
-              </div>
+<!--                 <a href="mailto:sg@reesao.org" class="text-[#0071bd]/80 text-sm font-medium hover:text-[#0071bd] transition-colors block">sg@reesao.org</a>
+ -->              </div>
             </div>
           </div>
 
@@ -175,11 +175,9 @@ import slide1 from '../assets/hero.jpg'; // Image de fond pour le banner
               <div>
                 <h4 class="text-xs font-black uppercase tracking-[0.1em] text-[#0071bd] mb-2">Ligne Téléphonique</h4>
                 <p class="text-[#0071bd]/80 text-sm font-medium block mb-1 hover:text-[#0071bd] transition-colors cursor-pointer">
-                  +228 90 00 00 00
+                  +221 77 253 04 75
                 </p>
-                <p class="text-[#0071bd]/80 text-sm font-medium block hover:text-[#0071bd] transition-colors cursor-pointer">
-                  +228 22 00 00 00
-                </p>
+               
               </div>
             </div>
           </div>
