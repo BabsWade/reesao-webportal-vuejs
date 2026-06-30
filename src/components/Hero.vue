@@ -6,23 +6,23 @@ import slide3 from '../assets/hero4.jpg'
 
 const slides = [
   {
-    tag: "Gouvernance Régionale",
-    titlePrefix: "Conférence des Recteurs :",
-    highlight: "L'Harmonisation",
+    tag: "Notre vision",
+    titlePrefix: "Unir les universités pour",
+    highlight: "construire l’excellence académique en Afrique de l’Ouest",
     text: "Harmonisation des politiques d'enseignement supérieur et coopération académique stratégique à l'échelle de l'Afrique de l'Ouest.",
     img: slide1
   },
   {
-    tag: "Innovation & Recherche",
-    titlePrefix: "Propulser la recherche par",
+    tag: "Nos engagements",
+    titlePrefix: "Harmoniser les formations pour",
     highlight: "L'Excellence",
-    text: "Connecter les universités ouest-africaines aux standards mondiaux grâce au levier technologique et aux plateformes partagées.",
+    text: "renforcer la qualité et la compétitivité de nos universités.",
     img: slide2
   },
   {
-    tag: "Synergie Panafricaine",
-    titlePrefix: "Bâtir un espace uni via",
-    highlight: "La Synergie",
+    tag: "Notre ambition",
+    titlePrefix: "Bâtir ensemble l’avenir de",
+    highlight: "l’enseignement supérieur ouest-africain",
     text: "Fédérer les compétences et les ressources des institutions pour former les leaders et concevoir les solutions de demain.",
     img: slide3
   }
@@ -131,7 +131,7 @@ onBeforeUnmount(() => {
                   </span>
                 </div>
                 
-                <h1 class="text-4xl md:text-6xl lg:text-[50px] font-bold tracking-tight leading-[1.05] max-w-4xl text-white">
+                <h1 class="text-4xl md:text-6xl lg:text-[40px] font-bold tracking-tight leading-[1.05] max-w-4xl text-white">
                   {{ slides[current].titlePrefix }}
                   <span class="block text-[#ffe900] mt-2 xl:mt-4 relative inline-block">
                     {{ slides[current].highlight }}
@@ -155,7 +155,7 @@ onBeforeUnmount(() => {
             
             <a href="#stats" class="relative group">
               <div class="absolute inset-0 bg-[#38a935] translate-x-3 translate-y-3 transition-transform duration-300 ease-out group-hover:translate-x-1.5 group-hover:translate-y-1.5"></div>
-              <div class="relative bg-[#ffe900] text-[#0071bd] px-8 py-4 text-xs font-bold uppercase tracking-[0.2em] flex items-center gap-3 border-2 border-transparent group-hover:border-[#0071bd] transition-colors">
+              <div class="relative bg-[#ffe900] text-[#0071bd] px-8 py-2 text-xs font-bold uppercase tracking-[0.2em] flex items-center gap-3 border-2 border-transparent group-hover:border-[#0071bd] transition-colors">
                 <span class="w-1.5 h-1.5 bg-[#0071bd] rotate-45 mr-1"></span>
                 Découvrir le réseau
                 <i class="ri-arrow-right-line text-lg transform transition-transform group-hover:translate-x-1 ml-2"></i>
@@ -164,7 +164,7 @@ onBeforeUnmount(() => {
             
             <a href="#etablissements" class="relative group">
               <div class="absolute inset-0 border border-white/20 translate-x-3 translate-y-3 transition-all duration-300 ease-out group-hover:translate-x-1.5 group-hover:translate-y-1.5 group-hover:border-[#ffe900]/50"></div>
-              <div class="relative text-white px-8 py-4 text-xs font-bold uppercase tracking-[0.2em] border border-white/20 bg-[#0071bd]/30 backdrop-blur-sm transition-colors duration-300 group-hover:bg-[#0071bd]/50 group-hover:text-[#ffe900]">
+              <div class="relative text-white px-8 py-3 text-xs font-bold uppercase tracking-[0.2em] border border-white/20 bg-[#0071bd]/30 backdrop-blur-sm transition-colors duration-300 group-hover:bg-[#0071bd]/50 group-hover:text-[#ffe900]">
                 Nos établissements
               </div>
             </a>

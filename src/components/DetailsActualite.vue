@@ -50,7 +50,7 @@ const fetchArticle = async () => {
     article.value = {
       id: post.id,
       titre: post.title.rendered,
-      chapeau: post.excerpt.rendered.replace(/<[^>]+>/g, '').trim(),
+     // chapeau: post.excerpt.rendered.replace(/<[^>]+>/g, '').trim(),
       categorie: post._embedded?.['wp:term']?.[0]?.[0]?.name || 'Actualités',
       date: new Date(post.date).toLocaleDateString('fr-FR', {
         day: '2-digit',
@@ -208,9 +208,9 @@ const shareArticle = (platform) => {
               </div>
             </div>
 
-            <p v-if="article.chapeau" class="text-lg md:text-xl font-sans text-[#0071bd]/80 font-normal leading-relaxed border-l-[3px] border-[#ffe900] pl-6 py-2 bg-white p-6 shadow-sm">
+            <!---<p v-if="article.chapeau" class="text-lg md:text-xl font-sans text-[#0071bd]/80 font-normal leading-relaxed border-l-[3px] border-[#ffe900] pl-6 py-2 bg-white p-6 shadow-sm">
               {{ article.chapeau }}
-            </p>
+            </p>-->
 
             <div 
               class="prose max-w-none text-[#0071bd]/70 font-light text-base md:text-lg leading-relaxed space-y-6 
